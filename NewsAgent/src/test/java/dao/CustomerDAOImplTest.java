@@ -2,6 +2,7 @@ package dao;
 
 import model.Customer;
 import org.junit.Test;
+import utils.JDBCUtils;
 
 import java.sql.Connection;
 import java.sql.Date;
