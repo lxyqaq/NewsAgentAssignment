@@ -69,7 +69,6 @@ public class CommandLine {
                 case 5:
                     break;
             }
-
         }
     }
 

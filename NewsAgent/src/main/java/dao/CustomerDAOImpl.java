@@ -42,7 +42,7 @@ public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
 
     @Override
     public List<Customer> getAll(Connection conn) {
-        String sql = "select id,name,email,address,phoneNumber from customer";
+        String sql = "select * from customer";
         List<Customer> list = getForList(conn, sql);
         return list;
     }
@@ -52,6 +52,5 @@ public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
         String sql = "select count(*) from customer";
         return getValue(conn, sql);
     }
-
 
 }
