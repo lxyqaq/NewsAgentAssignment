@@ -76,17 +76,17 @@ public class CommandLine {
     // CustomerDAO Method:
     public void testInsert() {
         Connection conn = null;
-        System.out.printf("Enter Customer ID: \n");
-        int customerId = scanner.nextInt();
         System.out.printf("Enter Customer Name: \n");
         String customerName = scanner.next();
         System.out.printf("Enter Customer Emali: \n");
         String customerEmail = scanner.next();
-        System.out.printf("Enter Customer Birth: \n");
-        long customerBirth = scanner.nextLong();
+        System.out.printf("Enter Customer Address: \n");
+        String customerAddress = scanner.next();
+        System.out.printf("Enter Customer PhoneNumber: \n");
+        String customerPhoneNumber = scanner.next();
         try {
             conn = JDBCUtils.getConnection();
-            Customer cust = new Customer(customerId, customerName, customerEmail, new Date(customerBirth));
+            Customer cust = new Customer(customerName, customerEmail, customerAddress, customerPhoneNumber);
             customerDAO.insert(conn, cust);
             System.out.println("Added successfully");
         } catch (Exception e) {
@@ -119,11 +119,14 @@ public class CommandLine {
         String customerName = scanner.next();
         System.out.printf("Enter Customer Emali: \n");
         String customerEmail = scanner.next();
-        System.out.printf("Enter Customer Birth: \n");
+        System.out.printf("Enter Customer Address: \n");
+        String customerAddress = scanner.next();
+        System.out.printf("Enter Customer PhoneNumber: \n");
+        String customerPhoneNumber = scanner.next();
         long customerBirth = scanner.nextLong();
         try {
             conn = JDBCUtils.getConnection();
-            Customer cust = new Customer(customerId, customerName, customerEmail, new Date(customerBirth));
+            Customer cust = new Customer(customerId, customerName, customerEmail, customerAddress, customerPhoneNumber);
             customerDAO.update(conn, cust);
             System.out.println("Successfully modified");
         } catch (Exception e) {

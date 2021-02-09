@@ -10,21 +10,30 @@ import java.sql.Date;
  * @Version 1.0
  */
 public class Customer {
+
     private int id;
     private String name;
     private String email;
-    private Date birth;
+    private String address;
+    private String phoneNumber;
 
     public Customer() {
-        super();
+
     }
 
-    public Customer(int id, String name, String email, Date birth) {
-        super();
+    public Customer(String name, String email, String addresss, String phoneNumber) {
+        this.name = name;
+        this.email = email;
+        this.address = addresss;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Customer(int id, String name, String email, String address, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.birth = birth;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
     public int getId() {
@@ -51,17 +60,31 @@ public class Customer {
         this.email = email;
     }
 
-    public Date getBirth() {
-        return birth;
+    public String getAddress() {
+        return address;
     }
 
-    public void setBirth(Date birth) {
-        this.birth = birth;
+    public void setAddresss(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
     public String toString() {
-        return "Customer [id=" + id + ", name=" + name + ", email=" + email + ", birth=" + birth + "]";
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
     }
 
 }
