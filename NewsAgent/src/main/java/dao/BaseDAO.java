@@ -108,12 +108,10 @@ public abstract class BaseDAO<T> {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
-
             ps = conn.prepareStatement(sql);
             for (int i = 0; i < args.length; i++) {
                 ps.setObject(i + 1, args[i]);
             }
-
             rs = ps.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
             int columnCount = rsmd.getColumnCount();
