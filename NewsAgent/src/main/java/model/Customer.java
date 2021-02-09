@@ -4,8 +4,8 @@ import java.sql.Date;
 
 /**
  * @ClassName Customer
- * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Description Customer bean
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/8 01:59
  * @Version 1.0
  */

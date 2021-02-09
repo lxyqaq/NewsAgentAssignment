@@ -12,8 +12,8 @@ import java.util.Properties;
 
 /**
  * @ClassName JDBCUtils
- * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Description Get database connection method and Close database resource method
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/8 01:22
  * @Version 1.0
  */

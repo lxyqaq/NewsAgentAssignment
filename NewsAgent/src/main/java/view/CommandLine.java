@@ -9,9 +9,9 @@ import java.sql.Date;
 import java.util.*;
 
 /**
- * @ClassName ConsoleManager
- * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @ClassName CommandLine
+ * @Description NewsAgent System CommandLine
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/9 00:43
  * @Version 1.0
  */

@@ -7,9 +7,9 @@ import java.sql.Date;
 import java.util.List;
 
 /**
- * @ClassName CustomerDao
- * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @ClassName CustomerDAO
+ * @Description CustomerDAO interface
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/8 02:00
  * @Version 1.0
  */
