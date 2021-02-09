@@ -35,7 +35,7 @@ public abstract class BaseDAO<T> {
      * @return int
      * @throws
      * @description update method
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 01:45
      */
     public int update(Connection conn, String sql, Object... args) {
@@ -61,7 +61,7 @@ public abstract class BaseDAO<T> {
      * @return T
      * @throws
      * @description Return a record in the data table
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 01:47
      */
     public T getInstance(Connection conn, String sql, Object... args) {
@@ -101,7 +101,7 @@ public abstract class BaseDAO<T> {
      * @return java.util.List<T>
      * @throws
      * @description Returns a collection of multiple records in the data table
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 01:48
      */
     public List<T> getForList(Connection conn, String sql, Object... args) {
@@ -143,7 +143,7 @@ public abstract class BaseDAO<T> {
      * @return E
      * @throws
      * @description General method for querying special values
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 01:48
      */
     public <E> E getValue(Connection conn, String sql, Object... args) {

@@ -1,5 +1,7 @@
 package model;
 
+import controller.DaoExceptionHandler;
+
 import java.sql.Date;
 
 /**
@@ -21,15 +23,14 @@ public class Customer {
 
     }
 
-    public Customer(String name, String email, String addresss, String phoneNumber) {
-        this.name = name;
-        this.email = email;
-        this.address = addresss;
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Customer(int id, String name, String email, String address, String phoneNumber) {
-        this.id = id;
+    public Customer(String name, String email, String address, String phoneNumber) throws DaoExceptionHandler {
+        try {
+            validateName(name);
+            validateAddress(address);
+            validatePhoneNumber(phoneNumber);
+        } catch (DaoExceptionHandler daoExceptionHandler) {
+            daoExceptionHandler.printStackTrace();
+        }
         this.name = name;
         this.email = email;
         this.address = address;
@@ -38,10 +39,6 @@ public class Customer {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -85,6 +82,57 @@ public class Customer {
                 ", address='" + address + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
+    }
+
+    /**
+     * @param customerName
+     * @return void
+     * @throws
+     * @description validate customer name
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/9 18:47
+     */
+    public static void validateName(String customerName) throws DaoExceptionHandler {
+        if (customerName.isBlank() || customerName.isEmpty())
+            throw new DaoExceptionHandler("Customer Name NOT specified");
+        else if (customerName.length() < 2)
+            throw new DaoExceptionHandler("Customer Name does not meet minimum length requirements");
+        else if (customerName.length() > 50)
+            throw new DaoExceptionHandler("Customer Name does not exceeds maximum length requirements");
+    }
+
+    /**
+     * @param customerAddr
+     * @return void
+     * @throws
+     * @description validate customer address
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/9 18:48
+     */
+    public static void validateAddress(String customerAddr) throws DaoExceptionHandler {
+        if (customerAddr.isBlank() || customerAddr.isEmpty())
+            throw new DaoExceptionHandler("Customer Address NOT specified");
+        else if (customerAddr.length() < 5)
+            throw new DaoExceptionHandler("Customer Address does not meet minimum length requirements");
+        else if (customerAddr.length() > 60)
+            throw new DaoExceptionHandler("Customer Address does not exceeds maximum length requirements");
+    }
+
+    /**
+     * @param customerPhone
+     * @return void
+     * @throws
+     * @description validate customer phone number
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/9 18:48
+     */
+    public static void validatePhoneNumber(String customerPhone) throws DaoExceptionHandler {
+        if (customerPhone.isBlank() || customerPhone.isEmpty())
+            throw new DaoExceptionHandler("Customer PhoneNumber NOT specified");
+        else if (customerPhone.length() < 7)
+            throw new DaoExceptionHandler("Customer PhoneNumber does not meet minimum length requirements");
+        else if (customerPhone.length() > 15)
+            throw new DaoExceptionHandler("Customer PhoneNumber does not exceeds maximum length requirements");
     }
 
 }
