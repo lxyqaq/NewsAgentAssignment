@@ -164,9 +164,4 @@ public class CommandLine {
         }
     }
 
-    public static void main(String[] args) {
-        CommandLine commandLine = new CommandLine();
-        commandLine.start();
-    }
-
 }
