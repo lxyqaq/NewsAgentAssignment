@@ -1,5 +1,7 @@
 package model;
 
+import controller.DaoExceptionHandler;
+
 import java.sql.Date;
 
 /**
@@ -10,29 +12,33 @@ import java.sql.Date;
  * @Version 1.0
  */
 public class Customer {
+
     private int id;
     private String name;
     private String email;
-    private Date birth;
+    private String address;
+    private String phoneNumber;
 
     public Customer() {
-        super();
+
     }
 
-    public Customer(int id, String name, String email, Date birth) {
-        super();
-        this.id = id;
+    public Customer(String name, String email, String address, String phoneNumber) throws DaoExceptionHandler {
+        try {
+            validateName(name);
+            validateAddress(address);
+            validatePhoneNumber(phoneNumber);
+        } catch (DaoExceptionHandler daoExceptionHandler) {
+            daoExceptionHandler.printStackTrace();
+        }
         this.name = name;
         this.email = email;
-        this.birth = birth;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -51,17 +57,82 @@ public class Customer {
         this.email = email;
     }
 
-    public Date getBirth() {
-        return birth;
+    public String getAddress() {
+        return address;
     }
 
-    public void setBirth(Date birth) {
-        this.birth = birth;
+    public void setAddresss(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
     public String toString() {
-        return "Customer [id=" + id + ", name=" + name + ", email=" + email + ", birth=" + birth + "]";
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
+
+    /**
+     * @param customerName
+     * @return void
+     * @throws
+     * @description validate customer name
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/9 18:47
+     */
+    public static void validateName(String customerName) throws DaoExceptionHandler {
+        if (customerName.isBlank() || customerName.isEmpty())
+            throw new DaoExceptionHandler("Customer Name NOT specified");
+        else if (customerName.length() < 2)
+            throw new DaoExceptionHandler("Customer Name does not meet minimum length requirements");
+        else if (customerName.length() > 50)
+            throw new DaoExceptionHandler("Customer Name does not exceeds maximum length requirements");
+    }
+
+    /**
+     * @param customerAddr
+     * @return void
+     * @throws
+     * @description validate customer address
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/9 18:48
+     */
+    public static void validateAddress(String customerAddr) throws DaoExceptionHandler {
+        if (customerAddr.isBlank() || customerAddr.isEmpty())
+            throw new DaoExceptionHandler("Customer Address NOT specified");
+        else if (customerAddr.length() < 5)
+            throw new DaoExceptionHandler("Customer Address does not meet minimum length requirements");
+        else if (customerAddr.length() > 60)
+            throw new DaoExceptionHandler("Customer Address does not exceeds maximum length requirements");
+    }
+
+    /**
+     * @param customerPhone
+     * @return void
+     * @throws
+     * @description validate customer phone number
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/9 18:48
+     */
+    public static void validatePhoneNumber(String customerPhone) throws DaoExceptionHandler {
+        if (customerPhone.isBlank() || customerPhone.isEmpty())
+            throw new DaoExceptionHandler("Customer PhoneNumber NOT specified");
+        else if (customerPhone.length() < 7)
+            throw new DaoExceptionHandler("Customer PhoneNumber does not meet minimum length requirements");
+        else if (customerPhone.length() > 15)
+            throw new DaoExceptionHandler("Customer PhoneNumber does not exceeds maximum length requirements");
     }
 
 }

@@ -17,8 +17,8 @@ public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
 
     @Override
     public void insert(Connection conn, Customer cust) {
-        String sql = "insert into customer(name,email,birth)values(?,?,?)";
-        update(conn, sql, cust.getName(), cust.getEmail(), cust.getBirth());
+        String sql = "insert into customer(name,email,address,phoneNumber)values(?,?,?,?)";
+        update(conn, sql, cust.getName(), cust.getEmail(), cust.getAddress(), cust.getPhoneNumber());
     }
 
     @Override
@@ -29,20 +29,20 @@ public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
 
     @Override
     public void update(Connection conn, Customer cust) {
-        String sql = "update customer set name = ?,email = ?,birth = ? where id = ?";
-        update(conn, sql, cust.getName(), cust.getEmail(), cust.getBirth(), cust.getId());
+        String sql = "update customer set name = ?,email = ?,address = ?,phoneNumber = ? where id = ?";
+        update(conn, sql, cust.getName(), cust.getEmail(), cust.getAddress(),cust.getPhoneNumber(), cust.getId());
     }
 
     @Override
     public Customer getCustomerById(Connection conn, int id) {
-        String sql = "select id,name,email,birth from customer where id = ?";
+        String sql = "select id,name,email,address,phoneNumber from customer where id = ?";
         Customer customer = getInstance(conn, sql, id);
         return customer;
     }
 
     @Override
     public List<Customer> getAll(Connection conn) {
-        String sql = "select id,name,email,birth from customer";
+        String sql = "select * from customer";
         List<Customer> list = getForList(conn, sql);
         return list;
     }
@@ -50,12 +50,6 @@ public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
     @Override
     public Long getCount(Connection conn) {
         String sql = "select count(*) from customer";
-        return getValue(conn, sql);
-    }
-
-    @Override
-    public Date getMaxBirth(Connection conn) {
-        String sql = "select max(birth) from customer";
         return getValue(conn, sql);
     }
 

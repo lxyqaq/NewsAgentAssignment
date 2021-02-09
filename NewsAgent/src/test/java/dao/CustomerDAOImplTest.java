@@ -24,7 +24,7 @@ public class CustomerDAOImplTest {
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Customer cust = new Customer(2, "Jackey", "jackey@gamil.com", new Date(43534646435L));
+            Customer cust = new Customer();
             dao.insert(conn, cust);
             System.out.println("Added successfully");
         } catch (Exception e) {
@@ -53,7 +53,7 @@ public class CustomerDAOImplTest {
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Customer cust = new Customer(1, "Jason", "Jason@gamil.com", new Date(453465656L));
+            Customer cust = new Customer();
             dao.update(conn, cust);
             System.out.println("Successfully modified");
         } catch (Exception e) {
@@ -106,18 +106,5 @@ public class CustomerDAOImplTest {
         }
     }
 
-    @Test
-    public void testGetMaxBirth() {
-        Connection conn = null;
-        try {
-            conn = JDBCUtils.getConnection();
-            Date maxBirth = dao.getMaxBirth(conn);
-            System.out.println("The biggest birthday is：" + maxBirth);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            JDBCUtils.closeResource(conn, null);
-        }
-    }
 
 }

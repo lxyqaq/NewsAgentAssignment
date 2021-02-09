@@ -79,14 +79,4 @@ public interface CustomerDAO {
      */
     Long getCount(Connection conn);
 
-    /**
-     * @param conn
-     * @return java.sql.Date
-     * @throws
-     * @description Returns the largest birthday in the data table
-     * @author lxyqaq @email A00279565@student.ait.ie
-     * @date 2021/2/8 02:04
-     */
-    Date getMaxBirth(Connection conn);
-
 }
