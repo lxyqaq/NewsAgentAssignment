@@ -24,7 +24,7 @@ public class CustomerDAOImplTest {
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Customer cust = new Customer(1, "xiaofei", "xiaofei@126.com", new Date(43534646435L));
+            Customer cust = new Customer(2, "Jackey", "jackey@gamil.com", new Date(43534646435L));
             dao.insert(conn, cust);
             System.out.println("Added successfully");
         } catch (Exception e) {
@@ -53,7 +53,7 @@ public class CustomerDAOImplTest {
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Customer cust = new Customer(18, "贝多芬", "beiduofen@126.com", new Date(453465656L));
+            Customer cust = new Customer(1, "Jason", "Jason@gamil.com", new Date(453465656L));
             dao.update(conn, cust);
             System.out.println("Successfully modified");
         } catch (Exception e) {
@@ -68,7 +68,7 @@ public class CustomerDAOImplTest {
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Customer cust = dao.getCustomerById(conn, 18);
+            Customer cust = dao.getCustomerById(conn, 1);
             System.out.println(cust);
         } catch (Exception e) {
             e.printStackTrace();
