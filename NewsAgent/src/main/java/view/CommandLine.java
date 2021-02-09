@@ -73,6 +73,7 @@ public class CommandLine {
         }
     }
 
+    // CustomerDAO Method:
     public void testInsert() {
         Connection conn = null;
         System.out.printf("Enter Customer ID: \n");
