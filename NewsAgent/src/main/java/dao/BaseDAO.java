@@ -11,8 +11,8 @@ import java.util.List;
 
 /**
  * @ClassName BaseDAO
- * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Description BaseDAO method
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/8 01:34
  * @Version 1.0
  */

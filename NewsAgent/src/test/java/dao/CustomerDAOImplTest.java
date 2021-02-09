@@ -10,8 +10,8 @@ import java.util.List;
 
 /**
  * @ClassName CustomerDAOImplTest
- * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Description JUnit CustomerDAO method test
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/8 02:10
  * @Version 1.0
  */
