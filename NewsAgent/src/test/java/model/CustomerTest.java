@@ -27,4 +27,10 @@ public class CustomerTest extends TestCase {
 
     }
 
+    public void testCustomer002() {
+
+
+
+    }
+
 }
