@@ -74,7 +74,7 @@ public class CustomerController {
         long customerBirth = scanner.nextLong();
         try {
             conn = JDBCUtils.getConnection();
-            Customer cust = new Customer(customerName, customerEmail, customerAddress, customerPhoneNumber);
+            Customer cust = new Customer(customerId, customerName, customerEmail, customerAddress, customerPhoneNumber);
             customerDAO.update(conn, cust);
             System.out.println("Successfully modified");
         } catch (Exception e) {

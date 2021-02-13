@@ -37,6 +37,14 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
+    public Customer(int id, String name, String email, String address, String phoneNumber) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
+
     public int getId() {
         return id;
     }
@@ -97,7 +105,7 @@ public class Customer {
             throw new DaoExceptionHandler("Customer Name NOT specified");
         else if (customerName.length() < 2)
             throw new DaoExceptionHandler("Customer Name does not meet minimum length requirements");
-        else if (customerName.length() > 50)
+        else if (customerName.length() > 45)
             throw new DaoExceptionHandler("Customer Name does not exceeds maximum length requirements");
     }
 
