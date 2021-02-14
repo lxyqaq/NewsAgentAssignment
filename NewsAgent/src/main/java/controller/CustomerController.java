@@ -71,7 +71,6 @@ public class CustomerController {
         String customerAddress = scanner.next();
         System.out.printf("Enter Customer PhoneNumber: \n");
         String customerPhoneNumber = scanner.next();
-        long customerBirth = scanner.nextLong();
         try {
             conn = JDBCUtils.getConnection();
             Customer cust = new Customer(customerId, customerName, customerEmail, customerAddress, customerPhoneNumber);
