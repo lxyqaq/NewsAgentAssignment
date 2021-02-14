@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  * @ClassName PublicationController
- * @Description TODO
+ * @Description PublicationController database CRUD method
  * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/13 21:37
  * @Version 1.0
@@ -27,7 +27,7 @@ public class PublicationController {
         System.out.printf("Enter Publication Name: \n");
         String publicationName = scanner.next();
         System.out.printf("Enter Publication amount: \n");
-        String publicationAmount = scanner.next();
+        int publicationAmount = scanner.nextInt();
         try {
             conn = JDBCUtils.getConnection();
             Publication publi = new Publication(publicationName, publicationAmount);
@@ -62,7 +62,7 @@ public class PublicationController {
         System.out.printf("Enter Publication Name: \n");
         String publicationName = scanner.next();
         System.out.printf("Enter Publication Amount: \n");
-        String publicationAmount = scanner.next();
+        int publicationAmount = scanner.nextInt();
         try {
             conn = JDBCUtils.getConnection();
             Publication publi = new Publication(publicationId, publicationName, publicationAmount);
