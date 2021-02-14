@@ -2,8 +2,8 @@ import view.CommandLine;
 
 /**
  * @ClassName NewsAgentApplication
- * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Description NewsAgentApplication Start
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/9 18:23
  * @Version 1.0
  */

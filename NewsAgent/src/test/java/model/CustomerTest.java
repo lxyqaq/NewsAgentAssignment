@@ -64,7 +64,7 @@ public class CustomerTest extends TestCase {
     }
 
     //Test #: 4
-    //Test Objective: To catch an empty value Customer Address
+    //Test Objective: To catch an empty value Customer Name
     //Inputs: CustomerName = " "
     //Expected Output: Exception Message: "Customer Name NOT specified"
     public void testCustomer004() {

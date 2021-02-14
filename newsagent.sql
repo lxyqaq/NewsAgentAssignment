@@ -20,3 +20,10 @@ CREATE TABLE `newsagent`.`employee`
     `phoneNumber` VARCHAR(45) DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
+CREATE TABLE `newsagent`.`publication`
+(
+    `id`     int(10) AUTO_INCREMENT,
+    `name`   VARCHAR(45) NULL,
+    `amount` int         not null,
+    PRIMARY KEY (`id`)
+);
