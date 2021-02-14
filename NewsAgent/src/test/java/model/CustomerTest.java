@@ -35,12 +35,12 @@ public class CustomerTest extends TestCase {
 
     //Test #: 2
     //Test Objective: To catch an incorrect lower boundary value Customer name
-    //Inputs: CustomerName = "Ja"
+    //Inputs: CustomerName = "J"
     //Expected Output: Exception Message: "Customer Name does not meet minimum length requirements"
     public void testCustomer002() {
 
         try {
-            Customer.validateName("Ja");
+            Customer.validateName("J");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Name does not meet minimum length requirements", e.getMessage());
@@ -50,12 +50,12 @@ public class CustomerTest extends TestCase {
 
     //Test #: 3
     //Test Objective: To catch an incorrect Upper boundary value Customer name
-    //Inputs: CustomerName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    //Inputs: CustomerName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     //Expected Output: Exception Message: "Customer Name exceeds maximum length requirements"
     public void testCustomer003() {
 
         try {
-            Customer.validateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            Customer.validateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Name exceeds maximum length requirements", e.getMessage());
@@ -85,7 +85,7 @@ public class CustomerTest extends TestCase {
     public void testCustomer005() {
 
         try {
-            Customer.validateName("At");
+            Customer.validateAddress("At");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Address does not meet minimum length requirements", e.getMessage());
@@ -95,12 +95,12 @@ public class CustomerTest extends TestCase {
 
     //Test #: 6
     //Test Objective: To catch an incorrect Upper boundary value Customer Address
-    //Inputs: CustomerAddress = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    //Inputs: CustomerAddress = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     //Expected Output: Exception Message: "Customer Address exceeds maximum length requirements"
     public void testCustomer006() {
 
         try {
-            Customer.validateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            Customer.validateAddress("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Address exceeds maximum length requirements", e.getMessage());
@@ -115,7 +115,7 @@ public class CustomerTest extends TestCase {
     public void testCustomer007() {
 
         try {
-            Customer.validateName(" ");
+            Customer.validateAddress(" ");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Address NOT specified", e.getMessage());
@@ -130,7 +130,7 @@ public class CustomerTest extends TestCase {
     public void testCustomer008() {
 
         try {
-            Customer.validateName("083");
+            Customer.validatePhoneNumber("083");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer PhoneNumber does not meet minimum length requirements", e.getMessage());
@@ -145,7 +145,7 @@ public class CustomerTest extends TestCase {
     public void testCustomer009() {
 
         try {
-            Customer.validateName("888888888888888888888888888888888888888");
+            Customer.validatePhoneNumber("888888888888888888888888888888888888888");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer PhoneNumber exceeds maximum length requirements", e.getMessage());
@@ -160,7 +160,7 @@ public class CustomerTest extends TestCase {
     public void testCustomer010() {
 
         try {
-            Customer.validateName(" ");
+            Customer.validatePhoneNumber(" ");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer PhoneNumber NOT specified", e.getMessage());

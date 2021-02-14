@@ -30,7 +30,13 @@ public class Publication {
         this.amount = amount;
     }
 
-    public Publication(int id, String name, String amount) {
+    public Publication(int id, String name, String amount) throws DaoExceptionHandler {
+        try {
+            validateName(name);
+            validateAmount(amount);
+        } catch (DaoExceptionHandler daoExceptionHandler) {
+            daoExceptionHandler.printStackTrace();
+        }
         this.id = id;
         this.name = name;
         this.amount = amount;
@@ -83,7 +89,7 @@ public class Publication {
         else if (publicationrName.length() < 2)
             throw new DaoExceptionHandler("Publication Name does not meet minimum length requirements");
         else if (publicationrName.length() > 45)
-            throw new DaoExceptionHandler("Publication Name does not exceeds maximum length requirements");
+            throw new DaoExceptionHandler("Publication Name exceeds maximum length requirements");
     }
 
     /**
@@ -100,7 +106,7 @@ public class Publication {
         else if (publicationAmount.length() < 1)
             throw new DaoExceptionHandler("Publication Name does not meet minimum length requirements");
         else if (publicationAmount.length() > 45)
-            throw new DaoExceptionHandler("Publication Name does not exceeds maximum length requirements");
+            throw new DaoExceptionHandler("Publication Name exceeds maximum length requirements");
     }
 
 }

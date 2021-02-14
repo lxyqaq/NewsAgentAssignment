@@ -37,7 +37,14 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public Customer(int id, String name, String email, String address, String phoneNumber) {
+    public Customer(int id, String name, String email, String address, String phoneNumber) throws DaoExceptionHandler {
+        try {
+            validateName(name);
+            validateAddress(address);
+            validatePhoneNumber(phoneNumber);
+        } catch (DaoExceptionHandler daoExceptionHandler) {
+            daoExceptionHandler.printStackTrace();
+        }
         this.id = id;
         this.name = name;
         this.email = email;
@@ -106,7 +113,7 @@ public class Customer {
         else if (customerName.length() < 2)
             throw new DaoExceptionHandler("Customer Name does not meet minimum length requirements");
         else if (customerName.length() > 45)
-            throw new DaoExceptionHandler("Customer Name does not exceeds maximum length requirements");
+            throw new DaoExceptionHandler("Customer Name exceeds maximum length requirements");
     }
 
     /**
@@ -122,8 +129,8 @@ public class Customer {
             throw new DaoExceptionHandler("Customer Address NOT specified");
         else if (customerAddr.length() < 5)
             throw new DaoExceptionHandler("Customer Address does not meet minimum length requirements");
-        else if (customerAddr.length() > 60)
-            throw new DaoExceptionHandler("Customer Address does not exceeds maximum length requirements");
+        else if (customerAddr.length() > 45)
+            throw new DaoExceptionHandler("Customer Address exceeds maximum length requirements");
     }
 
     /**
@@ -140,7 +147,7 @@ public class Customer {
         else if (customerPhone.length() < 7)
             throw new DaoExceptionHandler("Customer PhoneNumber does not meet minimum length requirements");
         else if (customerPhone.length() > 15)
-            throw new DaoExceptionHandler("Customer PhoneNumber does not exceeds maximum length requirements");
+            throw new DaoExceptionHandler("Customer PhoneNumber exceeds maximum length requirements");
     }
 
 }
