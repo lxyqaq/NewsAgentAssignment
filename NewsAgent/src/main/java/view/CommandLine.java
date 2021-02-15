@@ -1,6 +1,7 @@
 package view;
 
 import controller.CustomerController;
+import controller.EmployeeController;
 import controller.PublicationController;
 import dao.CustomerDAOImpl;
 import model.Customer;
@@ -65,15 +66,20 @@ public class CommandLine {
         int action = scanner.nextInt();
         switch (action) {
             case 1:
-
+                employeeController.GetAll();
+                chooseEmployeeAction();
             case 2:
-
+                employeeController.Insert();
+                chooseEmployeeAction();
             case 3:
-
+                employeeController.Update();
+                chooseEmployeeAction();
             case 4:
-
+                employeeController.DeleteById();
+                chooseEmployeeAction();
             case 5:
-
+                employeeController.GetEmployeeById();
+                chooseEmployeeAction();
             case 6:
                 start();
                 break;
