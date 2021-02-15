@@ -21,6 +21,7 @@ public class CommandLine {
 
     private Scanner scanner = new Scanner(System.in);
     private CustomerController customerController = new CustomerController();
+    private EmployeeController employeeController = new EmployeeController();
     private PublicationController publicationController = new PublicationController();
 
     public int showInterface() {
@@ -51,6 +52,28 @@ public class CommandLine {
             case 5:
                 customerController.GetCustomerById();
                 chooseCustomerAction();
+            case 6:
+                start();
+                break;
+        }
+    }
+
+    public void chooseEmployeeAction() {
+        System.out.println("\n1 - Show all Employees  | 2 - Add Employee" +
+                "\n3 - Update Employee     | 4 - Delete Employee" +
+                "\n5 - Search Employee     | 6 - Exit");
+        int action = scanner.nextInt();
+        switch (action) {
+            case 1:
+
+            case 2:
+
+            case 3:
+
+            case 4:
+
+            case 5:
+
             case 6:
                 start();
                 break;
@@ -91,6 +114,7 @@ public class CommandLine {
                     chooseCustomerAction();
                     break;
                 case 2:
+                    chooseEmployeeAction();
                     break;
                 case 3:
                     choosePublicationAction();
