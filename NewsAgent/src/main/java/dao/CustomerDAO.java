@@ -21,7 +21,7 @@ public interface CustomerDAO {
      * @return void
      * @throws
      * @description Add the cust object to the database
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 02:01
      */
     void insert(Connection conn, Customer cust);
@@ -32,7 +32,7 @@ public interface CustomerDAO {
      * @return void
      * @throws
      * @description For the specified id, delete a record in the table
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 02:02
      */
     void deleteById(Connection conn, int id);
@@ -43,7 +43,7 @@ public interface CustomerDAO {
      * @return void
      * @throws
      * @description For the cust object in memory, modify the specified record in the data table
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 02:03
      */
     void update(Connection conn, Customer cust);
@@ -54,7 +54,7 @@ public interface CustomerDAO {
      * @return model.Customer
      * @throws
      * @description Query the corresponding Customer object for the specified id
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 02:03
      */
     Customer getCustomerById(Connection conn, int id);
@@ -64,7 +64,7 @@ public interface CustomerDAO {
      * @return java.util.List<model.Customer>
      * @throws
      * @description The set of all records in the query table
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 02:03
      */
     List<Customer> getAll(Connection conn);
@@ -74,7 +74,7 @@ public interface CustomerDAO {
      * @return java.lang.Long
      * @throws
      * @description Returns the number of data entries in the data table
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 02:04
      */
     Long getCount(Connection conn);

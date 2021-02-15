@@ -23,7 +23,7 @@ public class JDBCUtils {
      * @description Use Druid database connection pool technology
      * @param null
      * @return null
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 01:30
      */
     private static DataSource source;
@@ -51,7 +51,7 @@ public class JDBCUtils {
      * @param conn
      * @param ps
      * @description Operation of closing connection and Statement
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 23:02
      */
     public static void closeResource(Connection conn, Statement ps) {
@@ -74,7 +74,7 @@ public class JDBCUtils {
      * @param ps
      * @param rs
      * @description Close resource operation
-     * @author lxyqaq @email A00279565@student.ait.ie
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 23:45
      */
     public static void closeResource(Connection conn, Statement ps, ResultSet rs) {
