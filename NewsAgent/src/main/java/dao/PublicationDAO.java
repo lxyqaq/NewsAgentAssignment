@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @ClassName PublicationDAO
- * @Description TODO
+ * @Description PublicationDAO interface
  * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/13 21:21
  * @Version 1.0
