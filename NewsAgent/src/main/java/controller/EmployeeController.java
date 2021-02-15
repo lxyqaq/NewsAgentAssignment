@@ -9,7 +9,13 @@ import java.sql.Connection;
 import java.util.List;
 import java.util.Scanner;
 
-
+/**
+ * @ClassName EmployeeController
+ * @Description Override EmployeeDAO method
+ * @Author Minjun Dai @Email A00279566@student.ait.ie
+ * @Date 2021/2/14 02:06
+ * @Version 1.0
+ */
 public class EmployeeController {
 
     private Scanner scanner = new Scanner(System.in);

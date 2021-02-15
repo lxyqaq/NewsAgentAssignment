@@ -4,6 +4,14 @@ import controller.DaoExceptionHandler;
 import junit.framework.TestCase;
 
 
+/**
+ * @ClassName EmployeeTest
+ * @Description Override EmployeeDAO method
+ * @Author Minjun Dai @Email A00279566@student.ait.ie
+ * @Date 2021/2/14 02:06
+ * @Version 1.0
+ */
+
 public class EmployeeTest extends TestCase {
 
     //Test #: 1

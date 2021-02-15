@@ -4,6 +4,13 @@ import controller.DaoExceptionHandler;
 
 import java.sql.Date;
 
+/**
+ * @ClassName Employee
+ * @Description Override EmployeeDAO method
+ * @Author Minjun Dai @Email A00279566@student.ait.ie
+ * @Date 2021/2/14 02:06
+ * @Version 1.0
+ */
 
 public class Employee {
 
