@@ -1,56 +1,50 @@
 package view;
 
-import controller.CustomerController;
+import controller.EmployeeController;
 import controller.PublicationController;
-import dao.CustomerDAOImpl;
-import model.Customer;
+import dao.EmployeeDAOImpl;
+import model.Employee;
 import utils.JDBCUtils;
 
 import java.sql.Connection;
 import java.sql.Date;
 import java.util.*;
 
-/**
- * @ClassName CommandLine
- * @Description NewsAgent System CommandLine
- * @Author Xiangyu Liu @Email A00279565@student.ait.ie
- * @Date 2021/2/9 00:43
- * @Version 1.0
- */
+
 public class CommandLine {
 
     private Scanner scanner = new Scanner(System.in);
-    private CustomerController customerController = new CustomerController();
+    private EmployeeController employeeController = new EmployeeController();
     private PublicationController publicationController = new PublicationController();
 
     public int showInterface() {
         System.out.println("\nWelcome to NewsAgent System, сhoose one of the modules:" +
-                "\n1 - Customer      | 2 - Employee     | 3 - Publication" +
+                "\n1 - Customer     | 2 - Employee    | 3 - Publication" +
                 "\n4 - Order         | 5 - Bill");
         return scanner.nextInt();
     }
 
-    public void chooseCustomerAction() {
-        System.out.println("\n1 - Show all Customers  | 2 - Add Customer" +
-                "\n3 - Update Customer     | 4 - Delete Customer" +
-                "\n5 - Search Customer     | 6 - Exit");
+    public void chooseEmployeeAction() {
+        System.out.println("\n1 - Show all Employees  | 2 - Add Employee" +
+                "\n3 - Update Employee     | 4 - Delete Employee" +
+                "\n5 - Search Employee     | 6 - Exit");
         int action = scanner.nextInt();
         switch (action) {
             case 1:
-                customerController.GetAll();
-                chooseCustomerAction();
+                employeeController.GetAll();
+                chooseEmployeeAction();
             case 2:
-                customerController.Insert();
-                chooseCustomerAction();
+                employeeController.Insert();
+                chooseEmployeeAction();
             case 3:
-                customerController.Update();
-                chooseCustomerAction();
+                employeeController.Update();
+                chooseEmployeeAction();
             case 4:
-                customerController.DeleteById();
-                chooseCustomerAction();
+                employeeController.DeleteById();
+                chooseEmployeeAction();
             case 5:
-                customerController.GetCustomerById();
-                chooseCustomerAction();
+                employeeController.GetEmployeeById();
+                chooseEmployeeAction();
             case 6:
                 start();
                 break;
@@ -88,9 +82,9 @@ public class CommandLine {
         while (true) {
             switch (showInterface()) {
                 case 1:
-                    chooseCustomerAction();
                     break;
                 case 2:
+                    chooseEmployeeAction();
                     break;
                 case 3:
                     choosePublicationAction();
@@ -104,3 +98,4 @@ public class CommandLine {
     }
 
 }
+

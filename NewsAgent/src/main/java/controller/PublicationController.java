@@ -9,13 +9,7 @@ import java.sql.Connection;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * @ClassName PublicationController
- * @Description PublicationController database CRUD method
- * @Author Xiangyu Liu @Email A00279565@student.ait.ie
- * @Date 2021/2/13 21:37
- * @Version 1.0
- */
+
 public class PublicationController {
 
     private Scanner scanner = new Scanner(System.in);
