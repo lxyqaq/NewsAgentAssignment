@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @ClassName PublicationController
  * @Description PublicationController database CRUD method
  * @Author Xiangyu Liu @Email A00279565@student.ait.ie
- * @Date 2021/2/13 21:37
+ * @Date 2021/2/13 21:38
  * @Version 1.0
  */
 public class PublicationController {
