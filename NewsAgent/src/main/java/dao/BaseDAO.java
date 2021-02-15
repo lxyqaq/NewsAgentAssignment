@@ -52,7 +52,7 @@ public abstract class BaseDAO<T> {
             ResultSetMetaData rsmd = rs.getMetaData();
             int columnCount = rsmd.getColumnCount();
             if (rs.next()) {
-                T t = clazz.newInstance();
+                T t = clazz.getDeclaredConstructor().newInstance();
                 for (int i = 0; i < columnCount; i++) {
                     Object columValue = rs.getObject(i + 1);
                     String columnLabel = rsmd.getColumnLabel(i + 1);
@@ -84,7 +84,7 @@ public abstract class BaseDAO<T> {
             int columnCount = rsmd.getColumnCount();
             ArrayList<T> list = new ArrayList<T>();
             while (rs.next()) {
-                T t = clazz.newInstance();
+                T t = clazz.getDeclaredConstructor().newInstance();
                 for (int i = 0; i < columnCount; i++) {
                     Object columValue = rs.getObject(i + 1);
                     String columnLabel = rsmd.getColumnLabel(i + 1);
