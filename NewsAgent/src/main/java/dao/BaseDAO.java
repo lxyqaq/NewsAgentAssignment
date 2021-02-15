@@ -13,7 +13,7 @@ import java.util.List;
  * @ClassName BaseDAO
  * @Description BaseDAO method
  * @Author Xiangyu Liu @Email A00279565@student.ait.ie
- * @Date 2021/2/8 01:34
+ * @Date 2021/2/8 01:35
  * @Version 1.0
  */
 public abstract class BaseDAO<T> {

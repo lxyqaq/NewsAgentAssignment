@@ -9,7 +9,7 @@ import java.util.List;
  * @ClassName PublicationDAOImpl
  * @Description Override PublicationDAO method
  * @Author Xiangyu Liu @Email A00279565@student.ait.ie
- * @Date 2021/2/13 21:26
+ * @Date 2021/2/13 21:27
  * @Version 1.0
  */
 public class PublicationDAOImpl extends BaseDAO<Publication> implements PublicationDAO {

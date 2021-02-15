@@ -7,7 +7,7 @@ import junit.framework.TestCase;
  * @ClassName PublicationTest
  * @Description Publication Test Coverage
  * @Author Xiangyu Liu @Email A00279565@student.ait.ie
- * @Date 2021/2/13 21:56
+ * @Date 2021/2/13 21:57
  * @Version 1.0
  */
 public class PublicationTest extends TestCase {
