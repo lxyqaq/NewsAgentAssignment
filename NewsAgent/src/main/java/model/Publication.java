@@ -2,13 +2,7 @@ package model;
 
 import controller.DaoExceptionHandler;
 
-/**
- * @ClassName Publication
- * @Description Publication bean
- * @Author Xiangyu Liu @Email A00279565@student.ait.ie
- * @Date 2021/2/12 21:17
- * @Version 1.0
- */
+
 public class Publication {
 
     private int id;
@@ -75,14 +69,7 @@ public class Publication {
                 '}';
     }
 
-    /**
-     * @param publicationrName
-     * @return void
-     * @throws
-     * @description validate publicationrName
-     * @author Xiangyu Liu @email A00279565@student.ait.ie
-     * @date 2021/2/13 21:20
-     */
+
     public static void validateName(String publicationrName) throws DaoExceptionHandler {
         if (publicationrName.isBlank() || publicationrName.isEmpty())
             throw new DaoExceptionHandler("Publication Name NOT specified");
@@ -92,14 +79,7 @@ public class Publication {
             throw new DaoExceptionHandler("Publication Name exceeds maximum length requirements");
     }
 
-    /**
-     * @param publicationAmount
-     * @return void
-     * @throws
-     * @description validate publicationAmount
-     * @author Xiangyu Liu @email A00279565@student.ait.ie
-     * @date 2021/2/13 21:20
-     */
+
     public static void validateAmount(int publicationAmount) throws DaoExceptionHandler {
         if (publicationAmount < 0)
             throw new DaoExceptionHandler("Publication Amount NOT specified");
