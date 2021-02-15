@@ -9,7 +9,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * @ClassName BaseDAO
+ * @Description BaseDAO method
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
+ * @Date 2021/2/8 01:35
+ * @Version 1.0
+ */
 public abstract class BaseDAO<T> {
 
     private Class<T> clazz = null;
@@ -22,7 +28,16 @@ public abstract class BaseDAO<T> {
         clazz = (Class<T>) typeArguments[0];
     }
 
-
+    /**
+     * @param conn
+     * @param sql
+     * @param args
+     * @return int
+     * @throws
+     * @description update method
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/8 01:45
+     */
     public int update(Connection conn, String sql, Object... args) {
         PreparedStatement ps = null;
         try {
@@ -39,7 +54,16 @@ public abstract class BaseDAO<T> {
         return 0;
     }
 
-
+    /**
+     * @param conn
+     * @param sql
+     * @param args
+     * @return T
+     * @throws
+     * @description Return a record in the data table
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/8 01:47
+     */
     public T getInstance(Connection conn, String sql, Object... args) {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -70,7 +94,16 @@ public abstract class BaseDAO<T> {
         return null;
     }
 
-
+    /**
+     * @param conn
+     * @param sql
+     * @param args
+     * @return java.util.List<T>
+     * @throws
+     * @description Returns a collection of multiple records in the data table
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/8 01:48
+     */
     public List<T> getForList(Connection conn, String sql, Object... args) {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -103,7 +136,16 @@ public abstract class BaseDAO<T> {
         return null;
     }
 
-
+    /**
+     * @param conn
+     * @param sql
+     * @param args
+     * @return E
+     * @throws
+     * @description General method for querying special values
+     * @author Xiangyu Liu @email A00279565@student.ait.ie
+     * @date 2021/2/8 01:48
+     */
     public <E> E getValue(Connection conn, String sql, Object... args) {
         PreparedStatement ps = null;
         ResultSet rs = null;

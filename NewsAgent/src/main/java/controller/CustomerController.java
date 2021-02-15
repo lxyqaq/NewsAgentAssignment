@@ -12,7 +12,7 @@ import java.util.Scanner;
 /**
  * @ClassName CustomerController
  * @Description CustomerController database CRUD method
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/9 18:18
  * @Version 1.0
  */
