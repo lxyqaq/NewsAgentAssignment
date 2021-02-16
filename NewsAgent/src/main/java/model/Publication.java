@@ -2,7 +2,13 @@ package model;
 
 import controller.DaoExceptionHandler;
 
-
+/**
+ * @ClassName Customer
+ * @Description Customer bean
+ * @Author Xiangyu Liu @Email A00279565@student.ait.ie
+ * @Date 2021/2/11 01:59
+ * @Version 1.0
+ */
 public class Publication {
 
     private int id;
