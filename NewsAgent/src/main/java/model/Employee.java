@@ -1,6 +1,7 @@
 package model;
 
 import controller.DaoExceptionHandler;
+import org.apache.commons.lang3.StringUtils;
 
 import java.sql.Date;
 
@@ -32,10 +33,10 @@ public class Employee {
         } catch (DaoExceptionHandler daoExceptionHandler) {
             daoExceptionHandler.printStackTrace();
         }
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+        setName(name);
+        setEmail(email);
+        setAddresss(address);
+        setPhoneNumber(phoneNumber);
     }
 
     public Employee(int id, String name, String email, String address, String phoneNumber) throws DaoExceptionHandler {
@@ -46,15 +47,19 @@ public class Employee {
         } catch (DaoExceptionHandler daoExceptionHandler) {
             daoExceptionHandler.printStackTrace();
         }
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+        setId(id);
+        setName(name);
+        setEmail(email);
+        setAddresss(address);
+        setPhoneNumber(phoneNumber);
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -102,7 +107,7 @@ public class Employee {
 
 
     public static void validateName(String employeeName) throws DaoExceptionHandler {
-        if (employeeName.isBlank() || employeeName.isEmpty())
+        if (StringUtils.isBlank(employeeName))
             throw new DaoExceptionHandler("Employee Name NOT specified");
         else if (employeeName.length() < 2)
             throw new DaoExceptionHandler("Employee Name does not meet minimum length requirements");
@@ -112,7 +117,7 @@ public class Employee {
 
 
     public static void validateAddress(String employeeAddr) throws DaoExceptionHandler {
-        if (employeeAddr.isBlank() || employeeAddr.isEmpty())
+        if (StringUtils.isBlank(employeeAddr))
             throw new DaoExceptionHandler("Employee Address NOT specified");
         else if (employeeAddr.length() < 5)
             throw new DaoExceptionHandler("Employee Address does not meet minimum length requirements");
@@ -122,7 +127,7 @@ public class Employee {
 
 
     public static void validatePhoneNumber(String employeePhone) throws DaoExceptionHandler {
-        if (employeePhone.isBlank() || employeePhone.isEmpty())
+        if (StringUtils.isBlank(employeePhone))
             throw new DaoExceptionHandler("Employee PhoneNumber NOT specified");
         else if (employeePhone.length() < 7)
             throw new DaoExceptionHandler("Employee PhoneNumber does not meet minimum length requirements");

@@ -81,10 +81,25 @@ public class EmployeeTest extends TestCase {
     }
 
     //Test #: 5
+    //Test Objective: To catch an empty value Employee Name
+    //Inputs: EmployeeName = ""
+    //Expected Output: Exception Message: "Employee Name NOT specified"
+    public void testEmployee005() {
+
+        try {
+            Employee.validateName("");
+            fail("Exception expected");
+        } catch (DaoExceptionHandler e) {
+            assertEquals("Employee Name NOT specified", e.getMessage());
+        }
+
+    }
+
+    //Test #: 6
     //Test Objective: To catch an incorrect lower boundary value Employee Address
     //Inputs: EmployeeAddress = "At"
     //Expected Output: Exception Message: "Employee Address does not meet minimum length requirements"
-    public void testEmployee005() {
+    public void testEmployee006() {
 
         try {
             Employee.validateAddress("At");
@@ -95,11 +110,11 @@ public class EmployeeTest extends TestCase {
 
     }
 
-    //Test #: 6
+    //Test #: 7
     //Test Objective: To catch an incorrect Upper boundary value Employee Address
     //Inputs: EmployeeAddress = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     //Expected Output: Exception Message: "Employee Address exceeds maximum length requirements"
-    public void testEmployee006() {
+    public void testEmployee007() {
 
         try {
             Employee.validateAddress("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
@@ -110,11 +125,11 @@ public class EmployeeTest extends TestCase {
 
     }
 
-    //Test #: 7
+    //Test #: 8
     //Test Objective: To catch an empty value Employee Address
     //Inputs: EmployeeAddress = " "
     //Expected Output: Exception Message: "Employee Address NOT specified"
-    public void testEmployee007() {
+    public void testEmployee008() {
 
         try {
             Employee.validateAddress(" ");
@@ -125,11 +140,26 @@ public class EmployeeTest extends TestCase {
 
     }
 
-    //Test #: 8
+    //Test #: 9
+    //Test Objective: To catch an empty value Employee Address
+    //Inputs: EmployeeAddress = ""
+    //Expected Output: Exception Message: "Employee Address NOT specified"
+    public void testEmployee009() {
+
+        try {
+            Employee.validateAddress("");
+            fail("Exception expected");
+        } catch (DaoExceptionHandler e) {
+            assertEquals("Employee Address NOT specified", e.getMessage());
+        }
+
+    }
+
+    //Test #: 10
     //Test Objective: To catch an incorrect lower boundary value Employee PhoneNumber
     //Inputs: EmployeePhone = "083"
     //Expected Output: Exception Message: "Employee PhoneNumber does not meet minimum length requirements"
-    public void testEmployee008() {
+    public void testEmployee010() {
 
         try {
             Employee.validatePhoneNumber("083");
@@ -140,11 +170,11 @@ public class EmployeeTest extends TestCase {
 
     }
 
-    //Test #: 9
+    //Test #: 11
     //Test Objective: To catch an incorrect Upper boundary value Employee PhoneNumber
     //Inputs: EmployeePhone = "888888888888888888888888888888888888888"
     //Expected Output: Exception Message: "Employee PhoneNumber exceeds maximum length requirements"
-    public void testEmployee009() {
+    public void testEmployee011() {
 
         try {
             Employee.validatePhoneNumber("888888888888888888888888888888888888888");
@@ -155,14 +185,29 @@ public class EmployeeTest extends TestCase {
 
     }
 
-    //Test #: 10
+    //Test #: 12
     //Test Objective: To catch an empty value Employee PhoneNumber
     //Inputs: EmployeePhone = " "
     //Expected Output: Exception Message: "Employee PhoneNumber NOT specified"
-    public void testEmployee010() {
+    public void testEmployee012() {
 
         try {
             Employee.validatePhoneNumber(" ");
+            fail("Exception expected");
+        } catch (DaoExceptionHandler e) {
+            assertEquals("Employee PhoneNumber NOT specified", e.getMessage());
+        }
+
+    }
+
+    //Test #: 13
+    //Test Objective: To catch an empty value Employee PhoneNumber
+    //Inputs: EmployeePhone = ""
+    //Expected Output: Exception Message: "Employee PhoneNumber NOT specified"
+    public void testEmployee013() {
+
+        try {
+            Employee.validatePhoneNumber("");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Employee PhoneNumber NOT specified", e.getMessage());

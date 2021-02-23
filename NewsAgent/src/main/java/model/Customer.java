@@ -1,6 +1,7 @@
 package model;
 
 import controller.DaoExceptionHandler;
+import org.apache.commons.lang3.StringUtils;
 
 import java.sql.Date;
 
@@ -31,10 +32,10 @@ public class Customer {
         } catch (DaoExceptionHandler daoExceptionHandler) {
             daoExceptionHandler.printStackTrace();
         }
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+        setName(name);
+        setEmail(email);
+        setAddresss(address);
+        setPhoneNumber(phoneNumber);
     }
 
     public Customer(int id, String name, String email, String address, String phoneNumber) throws DaoExceptionHandler {
@@ -45,15 +46,19 @@ public class Customer {
         } catch (DaoExceptionHandler daoExceptionHandler) {
             daoExceptionHandler.printStackTrace();
         }
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+        setId(id);
+        setName(name);
+        setEmail(email);
+        setAddresss(address);
+        setPhoneNumber(phoneNumber);
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -108,7 +113,8 @@ public class Customer {
      * @date 2021/2/9 18:47
      */
     public static void validateName(String customerName) throws DaoExceptionHandler {
-        if (customerName.isBlank() || customerName.isEmpty())
+        //StringUtiles.isBlank(str) = str.isBlank()
+        if (StringUtils.isBlank(customerName))
             throw new DaoExceptionHandler("Customer Name NOT specified");
         else if (customerName.length() < 2)
             throw new DaoExceptionHandler("Customer Name does not meet minimum length requirements");
@@ -125,7 +131,7 @@ public class Customer {
      * @date 2021/2/9 18:48
      */
     public static void validateAddress(String customerAddr) throws DaoExceptionHandler {
-        if (customerAddr.isBlank() || customerAddr.isEmpty())
+        if (StringUtils.isBlank(customerAddr))
             throw new DaoExceptionHandler("Customer Address NOT specified");
         else if (customerAddr.length() < 5)
             throw new DaoExceptionHandler("Customer Address does not meet minimum length requirements");
@@ -142,7 +148,7 @@ public class Customer {
      * @date 2021/2/9 18:48
      */
     public static void validatePhoneNumber(String customerPhone) throws DaoExceptionHandler {
-        if (customerPhone.isBlank() || customerPhone.isEmpty())
+        if (StringUtils.isBlank(customerPhone))
             throw new DaoExceptionHandler("Customer PhoneNumber NOT specified");
         else if (customerPhone.length() < 7)
             throw new DaoExceptionHandler("Customer PhoneNumber does not meet minimum length requirements");

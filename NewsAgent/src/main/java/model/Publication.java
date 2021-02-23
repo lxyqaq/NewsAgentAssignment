@@ -1,6 +1,7 @@
 package model;
 
 import controller.DaoExceptionHandler;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @ClassName Customer
@@ -26,8 +27,8 @@ public class Publication {
         } catch (DaoExceptionHandler daoExceptionHandler) {
             daoExceptionHandler.printStackTrace();
         }
-        this.name = name;
-        this.amount = amount;
+        setName(name);
+        setAmount(amount);
     }
 
     public Publication(int id, String name, int amount) throws DaoExceptionHandler {
@@ -37,9 +38,9 @@ public class Publication {
         } catch (DaoExceptionHandler daoExceptionHandler) {
             daoExceptionHandler.printStackTrace();
         }
-        this.id = id;
-        this.name = name;
-        this.amount = amount;
+        setId(id);
+        setName(name);
+        setAmount(amount);
     }
 
     public int getId() {
@@ -77,7 +78,7 @@ public class Publication {
 
 
     public static void validateName(String publicationrName) throws DaoExceptionHandler {
-        if (publicationrName.isBlank() || publicationrName.isEmpty())
+        if (StringUtils.isBlank(publicationrName))
             throw new DaoExceptionHandler("Publication Name NOT specified");
         else if (publicationrName.length() < 2)
             throw new DaoExceptionHandler("Publication Name does not meet minimum length requirements");
@@ -88,9 +89,9 @@ public class Publication {
 
     public static void validateAmount(int publicationAmount) throws DaoExceptionHandler {
         if (publicationAmount < 0)
-            throw new DaoExceptionHandler("Publication Amount NOT specified");
-        else if (publicationAmount == 0)
             throw new DaoExceptionHandler("Publication Amount does not meet minimum length requirements");
+        else if (publicationAmount > 100000)
+            throw new DaoExceptionHandler("Publication Amount exceeds maximum length requirements");
     }
 
 }
