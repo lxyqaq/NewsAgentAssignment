@@ -3,8 +3,6 @@ package model;
 import controller.DaoExceptionHandler;
 import org.apache.commons.lang3.StringUtils;
 
-import java.sql.Date;
-
 /**
  * @ClassName Customer
  * @Description Customer bean
