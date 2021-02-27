@@ -15,7 +15,7 @@ Publication in user story:
 - Xiangyu Liu: 5 hours 3rd week (10 story points including Java PublicationDAO method:CRUD)
 - Xiangyu Liu: 5 hours 4th week (10 story points including Java PublicationDAO method:CRUD)
 
-Bill printing, orders registry completed in user stories:
+Bill in user stories:
 
 - Minjun Dai: 5 hours 3rd week (10 story points including Java BillDAO method:CRUD)
 - Minjun Dai: 5 hours 4th week (10 story points including Java BillDAO method:CRUD)
@@ -35,3 +35,8 @@ Stock in user stories:
 - The basic JDBC connection class and basic DAO method (3hrs) :Xiangyu Liu
 - USER STORY:Customer (Add, delete, modify and search methods.) (9hrs) :Xiangyu Liu
 - USER STORY:Employee (Add, delete, modify and search methods.) (15hrs) :Minjun Dai
+
+## Sprint2 Plan:
+- SQL Exception (3hrs) :Xiangyu Liu
+- USER STORY:Order (Add, delete, modify and search methods, JUnit Test) (15hrs) :Xiangyu Liu
+- USER STORY:Bill (Add, delete, modify and search methods, JUnit Test) (15hrs) :Minjun Dai
