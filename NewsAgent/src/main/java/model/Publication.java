@@ -25,7 +25,7 @@ public class Publication {
             validateName(name);
             validateAmount(amount);
         } catch (DaoExceptionHandler daoExceptionHandler) {
-            daoExceptionHandler.printStackTrace();
+            throw daoExceptionHandler;
         }
         setName(name);
         setAmount(amount);
@@ -36,7 +36,7 @@ public class Publication {
             validateName(name);
             validateAmount(amount);
         } catch (DaoExceptionHandler daoExceptionHandler) {
-            daoExceptionHandler.printStackTrace();
+            throw daoExceptionHandler;
         }
         setId(id);
         setName(name);

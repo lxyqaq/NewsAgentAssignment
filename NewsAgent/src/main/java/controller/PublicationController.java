@@ -33,9 +33,9 @@ public class PublicationController {
             conn = JDBCUtils.getConnection();
             Publication publi = new Publication(publicationName, publicationAmount);
             publicationDAO.insert(conn, publi);
-            System.out.println("Added successfully");
+            System.out.println("Insert Successfully");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Insert Failed");
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
@@ -48,9 +48,9 @@ public class PublicationController {
         try {
             conn = JDBCUtils.getConnection();
             publicationDAO.deleteById(conn, publicationId);
-            System.out.println("Successfully deleted");
+            System.out.println("Delete successfully");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Delete failed");
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
@@ -68,9 +68,9 @@ public class PublicationController {
             conn = JDBCUtils.getConnection();
             Publication publi = new Publication(publicationId, publicationName, publicationAmount);
             publicationDAO.update(conn, publi);
-            System.out.println("Successfully modified");
+            System.out.println("Update successfully");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Update failed");
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
@@ -85,7 +85,7 @@ public class PublicationController {
             Publication publi = publicationDAO.getPublicationById(conn, publicationId);
             System.out.println(publi);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("This ID does not exist");
         } finally {
             JDBCUtils.closeResource(conn, null);
         }

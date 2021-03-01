@@ -28,7 +28,7 @@ public class Customer {
             validateAddress(address);
             validatePhoneNumber(phoneNumber);
         } catch (DaoExceptionHandler daoExceptionHandler) {
-            daoExceptionHandler.printStackTrace();
+            throw daoExceptionHandler;
         }
         setName(name);
         setEmail(email);
@@ -42,7 +42,7 @@ public class Customer {
             validateAddress(address);
             validatePhoneNumber(phoneNumber);
         } catch (DaoExceptionHandler daoExceptionHandler) {
-            daoExceptionHandler.printStackTrace();
+            throw daoExceptionHandler;
         }
         setId(id);
         setName(name);
