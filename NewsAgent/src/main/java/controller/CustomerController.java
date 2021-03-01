@@ -34,11 +34,11 @@ public class CustomerController {
         String customerPhoneNumber = scanner.next();
         try {
             conn = JDBCUtils.getConnection();
-            Customer cust = new Customer(customerName, customerEmail, customerAddress, customerPhoneNumber);
-            customerDAO.insert(conn, cust);
-            System.out.println("Added successfully");
+            Customer customer = new Customer(customerName, customerEmail, customerAddress, customerPhoneNumber);
+            customerDAO.insert(conn, customer);
+            System.out.println("Insert Successfully");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Insert Failed");
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
@@ -51,9 +51,9 @@ public class CustomerController {
         try {
             conn = JDBCUtils.getConnection();
             customerDAO.deleteById(conn, customerId);
-            System.out.println("Successfully deleted");
+            System.out.println("Delete Successfully");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Delete Failed");
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
@@ -75,9 +75,9 @@ public class CustomerController {
             conn = JDBCUtils.getConnection();
             Customer cust = new Customer(customerId, customerName, customerEmail, customerAddress, customerPhoneNumber);
             customerDAO.update(conn, cust);
-            System.out.println("Successfully modified");
+            System.out.println("Update Successfully");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Update Failed");
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
@@ -92,7 +92,7 @@ public class CustomerController {
             Customer cust = customerDAO.getCustomerById(conn, customerId);
             System.out.println(cust);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("This ID does not exist");
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
