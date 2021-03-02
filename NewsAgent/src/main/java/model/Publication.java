@@ -78,7 +78,7 @@ public class Publication {
 
 
     public static void validateName(String publicationrName) throws DaoExceptionHandler {
-        if (StringUtils.isBlank(publicationrName))
+        if (publicationrName.isBlank() || publicationrName.isEmpty())
             throw new DaoExceptionHandler("Publication Name NOT specified");
         else if (publicationrName.length() < 2)
             throw new DaoExceptionHandler("Publication Name does not meet minimum length requirements");

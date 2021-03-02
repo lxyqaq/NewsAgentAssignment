@@ -20,7 +20,7 @@ public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
     @Override
     public void insert(Connection conn, Customer cust) {
         String sql = "insert into customer(name,email,address,phoneNumber)values(?,?,?,?)";
-        update(conn, sql, cust.getName(), cust.getEmail(), cust.getPhoneNumber());
+        update(conn, sql, cust.getName(), cust.getEmail(), cust.getAddress(), cust.getPhoneNumber());
     }
 
     @Override
