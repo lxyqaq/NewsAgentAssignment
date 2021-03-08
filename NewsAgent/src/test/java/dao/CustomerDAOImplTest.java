@@ -10,8 +10,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class CustomerDAOImplTest extends TestCase {
 
     CustomerDAO customerDAO = new CustomerDAOImpl();
