@@ -5,7 +5,7 @@ import controller.DaoExceptionHandler;
 /**
  * @ClassName Bill
  * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Author Minjun Dai @Email A00279566@student.ait.ie
  * @Date 2021/3/14 17:41
  * @Version 1.0
  */

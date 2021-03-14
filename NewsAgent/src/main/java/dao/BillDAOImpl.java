@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @ClassName BillDAOImpl
  * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Author Minjun Dai @Email A00279566@student.ait.ie
  * @Date 2021/3/14 18:00
  * @Version 1.0
  */
