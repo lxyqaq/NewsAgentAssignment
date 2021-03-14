@@ -37,7 +37,7 @@ public class BillDAOImpl extends BaseDAO<Bill> implements BillDAO {
     }
 
     @Override
-    public Bill getCustomerById(Connection conn, int id) {
+    public Bill getBillById(Connection conn, int id) {
         String sql = "select * from bill where id = ?";
         Bill bill = getInstance(conn, sql, id);
         return bill;

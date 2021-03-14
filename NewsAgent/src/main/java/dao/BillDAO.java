@@ -21,7 +21,7 @@ public interface BillDAO {
 
     boolean update(Connection conn, Bill bill);
 
-    Bill getCustomerById(Connection conn, int id);
+    Bill getBillById(Connection conn, int id);
 
     List<Bill> getAll(Connection conn);
 

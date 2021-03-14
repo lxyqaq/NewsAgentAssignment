@@ -37,7 +37,7 @@ public class OrderDAOImpl extends BaseDAO<Order> implements OrderDAO {
     }
 
     @Override
-    public Order getCustomerById(Connection conn, int id) {
+    public Order getOrderById(Connection conn, int id) {
         String sql = "select id,customerName,publicationName,date from order where id = ?";
         Order order = getInstance(conn, sql, id);
         return order;

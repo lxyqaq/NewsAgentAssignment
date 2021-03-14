@@ -20,7 +20,7 @@ public interface OrderDAO {
 
     boolean update(Connection conn, Order order);
 
-    Order getCustomerById(Connection conn, int id);
+    Order getOrderById(Connection conn, int id);
 
     List<Order> getAll(Connection conn);
 
