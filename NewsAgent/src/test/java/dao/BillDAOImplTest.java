@@ -16,16 +16,16 @@ public class BillDAOImplTest extends TestCase {
 
     //Test #: 1
     //Test Objective: To insert a Bill Account
-    //Inputs: BillName = "Jack", BillEmail = "jack@gmail.com", BillAddress = Athlone,
-    //BillPhoneNumber = 0830120548
-    //Expected Output: Bill Object created with id = 0, "Jack", BillEmail = "jack@gmail.com",
-    //BillAddress = Athlone, BillPhoneNumber = 0830120548
+    //Inputs: customerName = "Jack", customerAddress = "No.8 willow park",  fee= 100,
+    //date= 2021.3.14
+    //Expected Output: Bill Object created with id = 0, "Jack", customerAddress = "green street",
+    //fee= 100, date= 2021.3.14
     public void testBillDAO001() {
 
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill001 = new Bill("Jack", "jack@gmail.com", "Athlone", "0830120548");
+            Bill bill001 = new Bill("Jack", "No.8 willow park", "100", "2021.3.14");
             boolean insert = billDAO.insert(coon, bill001);
         } catch (DaoExceptionHandler | SQLException e) {
             fail("Exception not expected");
@@ -37,17 +37,17 @@ public class BillDAOImplTest extends TestCase {
 
     //Test #: 2
     //Test Objective: To delete a Bill Account by id
-    //Inputs: BillName = "Jack", BillEmail = "jack@gmail.com", BillAddress = Athlone,
-    //BillPhoneNumber = 0830120548
-    //Expected Output: Bill Object created with id = 0, "Jack", BillEmail = "jack@gmail.com",
-    //BillAddress = Athlone, BillPhoneNumber = 0830120548
+    //Inputs: customerName = "Jack", customerAddress = "No.8 willow park",  fee= 100,
+    //date= 2021.3.14
+    //Expected Output: Bill Object created with id = 0, "Jack", customerAddress = "green street",
+    //fee= 100, date= 2021.3.14
     public void testBillDAO002() {
 
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
             coon.setAutoCommit(false);
-            Bill bill002 = new Bill("Jack", "jack@gmail.com", "Athlone", "0830120548");
+            Bill bill002 = new Bill("Jack", "No.8 willow park", "100", "2021.3.14");
             billDAO.insert(coon, bill002);
             List<Bill> billList = billDAO.getAll(coon);
             billDAO.deleteById(coon, billList.get(billList.size() - 1).getId());
@@ -70,21 +70,21 @@ public class BillDAOImplTest extends TestCase {
     }
 
     //update
-    public void testCustometDAO003() {
+    public void testBillDAO003() {
 
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
             coon.setAutoCommit(false);
-            Bill bill003 = new Bill("Jack", "jack@gmail.com", "Athlone", "0830120548");
+            Bill bill003 = new Bill("Jack", "No.8 willow park", "100", "2021.3.14");
             billDAO.insert(coon, bill003);
-            Bill billUpdate003 = new Bill("Nathan", "nathan@gmail.com", "Dublin", "0830110548");
+            Bill billUpdate003 = new Bill("Nathan", "No.8 willow park", "100", "2021.3.14");
             billDAO.update(coon, billUpdate003);
             List<Bill> billList = billDAO.getAll(coon);
-            assertEquals(bill003.getName(), billList.get(billList.size() - 1).getName());
-            assertEquals(bill003.getEmail(), billList.get(billList.size() - 1).getEmail());
-            assertEquals(bill003.getAddress(), billList.get(billList.size() - 1).getAddress());
-            assertEquals(bill003.getPhoneNumber(), billList.get(billList.size() - 1).getPhoneNumber());
+            assertEquals(bill003.getCustomerName(), billList.get(billList.size() - 1).getCustomerName());
+            assertEquals(bill003.getCustomerAddress(), billList.get(billList.size() - 1).getCustomerAddress());
+            assertEquals(bill003.getFee(), billList.get(billList.size() - 1).getFee());
+            assertEquals(bill003.getDate(), billList.get(billList.size() - 1).getDate());
         } catch (DaoExceptionHandler | SQLException e) {
             fail("Exception not expected");
         } finally {
@@ -109,14 +109,14 @@ public class BillDAOImplTest extends TestCase {
         try {
             coon = JDBCUtils.getConnection();
             coon.setAutoCommit(false);
-            Bill bill004 = new Bill("Jack", "jack@gmail.com", "Athlone", "0830120548");
+            Bill bill004 = new Bill("Jack", "No.8 willow park", "100", "2021.3.14");
             billDAO.insert(coon, bill004);
             List<Bill> billList = billDAO.getAll(coon);
             Bill bill = billDAO.getBillById(coon, billList.get(billList.size() - 1).getId());
-            assertEquals(bill004.getName(), bill.getName());
-            assertEquals(bill004.getEmail(), bill.getEmail());
-            assertEquals(bill004.getAddress(), bill.getAddress());
-            assertEquals(bill004.getPhoneNumber(), bill.getPhoneNumber());
+            assertEquals(bill004.getCustomerName(), bill.getCustomerName());
+            assertEquals(bill004.getCustomerAddress(), bill.getCustomerAddress());
+            assertEquals(bill004.getFee(), bill.getFee());
+            assertEquals(bill004.getDate(), bill.getDate());
         } catch (DaoExceptionHandler | SQLException e) {
             fail("Exception not expected");
         } finally {

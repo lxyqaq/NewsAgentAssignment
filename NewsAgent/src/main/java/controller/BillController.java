@@ -23,18 +23,18 @@ public class BillController {
 
     // BillDAO Method:
     public void Insert() {
-        System.out.printf("Enter Bill Name: \n");
-        String billName = scanner.next();
-        System.out.printf("Enter Bill Emali: \n");
-        String billEmail = scanner.next();
-        System.out.printf("Enter Bill Address: \n");
-        String billAddress = scanner.next();
-        System.out.printf("Enter Bill PhoneNumber: \n");
-        String billPhoneNumber = scanner.next();
+        System.out.printf("Enter customerName: \n");
+        String customerName = scanner.next();
+        System.out.printf("Enter customerAddress: \n");
+        String customerAddress = scanner.next();
+        System.out.printf("Enter fee: \n");
+        Double fee = scanner.nextDouble();
+        System.out.printf("Enter date: \n");
+        String date = scanner.next();
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Bill bill = new Bill(billName, billEmail, billAddress, billPhoneNumber);
+            Bill bill = new Bill(customerName, customerAddress, fee, date);
             boolean insert = billDAO.insert(conn, bill);
             if (insert == true) {
                 System.out.println("Bill Details Saved");
@@ -70,19 +70,19 @@ public class BillController {
     public void Update() {
         System.out.printf("Enter Bill ID: \n");
         int billId = scanner.nextInt();
-        System.out.printf("Enter Bill Name: \n");
-        String billName = scanner.next();
-        System.out.printf("Enter Bill Emali: \n");
-        String billEmail = scanner.next();
-        System.out.printf("Enter Bill Address: \n");
-        String billAddress = scanner.next();
-        System.out.printf("Enter Bill PhoneNumber: \n");
-        String billPhoneNumber = scanner.next();
+        System.out.printf("Enter customerName: \n");
+        String customerName = scanner.next();
+        System.out.printf("Enter customerAddress: \n");
+        String customerAddress = scanner.next();
+        System.out.printf("Enter fee: \n");
+        double fee = scanner.nextDouble();
+        System.out.printf("Enter date: \n");
+        String date = scanner.next();
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Bill cust = new Bill(billId, billName, billEmail, billAddress, billPhoneNumber);
-            boolean update = billDAO.update(conn, cust);
+            Bill bilt = new Bill(billId, customerName, customerAddress, fee, date);
+            boolean update = billDAO.update(conn, bilt);
             if (update == true) {
                 System.out.println("Bill Updated");
             } else {
@@ -101,8 +101,8 @@ public class BillController {
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Bill cust = billDAO.getBillById(conn, billId);
-            System.out.println(cust);
+            Bill bilt = billDAO.getBillById(conn, billId);
+            System.out.println(bilt);
         } catch (Exception e) {
             System.out.println("This ID does not exist");
         } finally {
