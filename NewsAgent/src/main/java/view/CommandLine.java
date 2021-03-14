@@ -2,6 +2,7 @@ package view;
 
 import controller.CustomerController;
 import controller.EmployeeController;
+import controller.OrderController;
 import controller.PublicationController;
 import dao.CustomerDAOImpl;
 import model.Customer;
@@ -24,6 +25,7 @@ public class CommandLine {
     private CustomerController customerController = new CustomerController();
     private EmployeeController employeeController = new EmployeeController();
     private PublicationController publicationController = new PublicationController();
+    private OrderController orderController = new OrderController();
 
     public int showInterface() {
         System.out.println("\nWelcome to NewsAgent System, сhoose one of the modules:" +
@@ -113,6 +115,33 @@ public class CommandLine {
         }
     }
 
+    public void chooseOrderAction() {
+        System.out.println("\n1 - Show all Orders  | 2 - Add Order" +
+                "\n3 - Update Order     | 4 - Delete Order" +
+                "\n5 - Search Order     | 6 - Exit");
+        int action = scanner.nextInt();
+        switch (action) {
+            case 1:
+                orderController.GetAll();
+                chooseOrderAction();
+            case 2:
+                orderController.Insert();
+                chooseOrderAction();
+            case 3:
+                orderController.Update();
+                chooseOrderAction();
+            case 4:
+                orderController.DeleteById();
+                chooseOrderAction();
+            case 5:
+                orderController.GetOrderById();
+                chooseOrderAction();
+            case 6:
+                start();
+                break;
+        }
+    }
+
     public void start() {
         while (true) {
             switch (showInterface()) {
@@ -126,6 +155,7 @@ public class CommandLine {
                     choosePublicationAction();
                     break;
                 case 4:
+                    chooseOrderAction();
                     break;
                 case 5:
                     break;

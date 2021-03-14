@@ -31,8 +31,8 @@ CREATE TABLE `newsagent`.`order`
 (
     `id`              int(10) AUTO_INCREMENT,
     `customerName`    VARCHAR(45) NULL,
-    `publicationName` VARCHAR(45) NULL,
-    `date`            VARCHAR(45) null,
+    `publicationName` VARCHAR(45) DEFAULT NULL,
+    `date`            VARCHAR(45) DEFAULT null,
     PRIMARY KEY (`id`)
 );
 CREATE TABLE `newsagent`.`bill`
@@ -40,7 +40,7 @@ CREATE TABLE `newsagent`.`bill`
     `id`              int(10) AUTO_INCREMENT,
     `customerName`    VARCHAR(45) NULL,
     `customerAddress` VARCHAR(45) NULL,
-    `fee`            DOUBLE null,
+    `fee`             DOUBLE      null,
     `date`            VARCHAR(45) null,
     PRIMARY KEY (`id`)
 );
