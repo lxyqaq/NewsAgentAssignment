@@ -23,7 +23,7 @@ public interface PublicationDAO {
      * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/13 21:23
      */
-    void insert(Connection conn, Publication publi);
+    boolean insert(Connection conn, Publication publi);
 
     /**
      * @param conn
@@ -34,7 +34,7 @@ public interface PublicationDAO {
      * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/13 21:23
      */
-    void deleteById(Connection conn, int id);
+    boolean deleteById(Connection conn, int id);
 
     /**
      * @param conn
@@ -45,7 +45,7 @@ public interface PublicationDAO {
      * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/13 21:24
      */
-    void update(Connection conn, Publication publi);
+    boolean update(Connection conn, Publication publi);
 
     /**
      * @param conn

@@ -18,21 +18,24 @@ import java.util.List;
 public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
 
     @Override
-    public void insert(Connection conn, Customer cust) {
+    public boolean insert(Connection conn, Customer cust) {
         String sql = "insert into customer(name,email,address,phoneNumber)values(?,?,?,?)";
-        update(conn, sql, cust.getName(), cust.getEmail(), cust.getAddress(), cust.getPhoneNumber());
+        boolean insert = update(conn, sql, cust.getName(), cust.getEmail(), cust.getAddress(), cust.getPhoneNumber());
+        return insert;
     }
 
     @Override
-    public void deleteById(Connection conn, int id) {
+    public boolean deleteById(Connection conn, int id) {
         String sql = "delete from customer where id = ?";
-        update(conn, sql, id);
+        boolean delete = update(conn, sql, id);
+        return delete;
     }
 
     @Override
-    public void update(Connection conn, Customer cust) {
+    public boolean update(Connection conn, Customer cust) {
         String sql = "update customer set name = ?,email = ?,address = ?,phoneNumber = ? where id = ?";
-        update(conn, sql, cust.getName(), cust.getEmail(), cust.getAddress(), cust.getPhoneNumber(), cust.getId());
+        boolean update = update(conn, sql, cust.getName(), cust.getEmail(), cust.getAddress(), cust.getPhoneNumber(), cust.getId());
+        return update;
     }
 
     @Override

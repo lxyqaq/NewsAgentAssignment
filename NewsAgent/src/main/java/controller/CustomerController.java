@@ -23,7 +23,6 @@ public class CustomerController {
 
     // CustomerDAO Method:
     public void Insert() {
-        Connection conn = null;
         System.out.printf("Enter Customer Name: \n");
         String customerName = scanner.next();
         System.out.printf("Enter Customer Emali: \n");
@@ -32,35 +31,43 @@ public class CustomerController {
         String customerAddress = scanner.next();
         System.out.printf("Enter Customer PhoneNumber: \n");
         String customerPhoneNumber = scanner.next();
+        Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
             Customer customer = new Customer(customerName, customerEmail, customerAddress, customerPhoneNumber);
-            customerDAO.insert(conn, customer);
-            System.out.println("Insert Successfully");
+            boolean insert = customerDAO.insert(conn, customer);
+            if (insert == true) {
+                System.out.println("Customer Details Saved");
+            } else {
+                System.out.println("ERROR: Customer Details NOT Saved");
+            }
         } catch (Exception e) {
-            System.out.println("Insert Failed");
+            e.printStackTrace();
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
     }
 
     public void DeleteById() {
-        Connection conn = null;
         System.out.printf("Enter Customer ID: \n");
         int customerId = scanner.nextInt();
+        Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            customerDAO.deleteById(conn, customerId);
-            System.out.println("Delete Successfully");
+            boolean delete = customerDAO.deleteById(conn, customerId);
+            if (delete == true) {
+                System.out.println("Customer Deleted");
+            } else {
+                System.out.println("ERROR: Customer Details NOT Deleted or Do Not Exist");
+            }
         } catch (Exception e) {
-            System.out.println("Delete Failed");
+            e.printStackTrace();
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
     }
 
     public void Update() {
-        Connection conn = null;
         System.out.printf("Enter Customer ID: \n");
         int customerId = scanner.nextInt();
         System.out.printf("Enter Customer Name: \n");
@@ -71,22 +78,27 @@ public class CustomerController {
         String customerAddress = scanner.next();
         System.out.printf("Enter Customer PhoneNumber: \n");
         String customerPhoneNumber = scanner.next();
+        Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
             Customer cust = new Customer(customerId, customerName, customerEmail, customerAddress, customerPhoneNumber);
-            customerDAO.update(conn, cust);
-            System.out.println("Update Successfully");
+            boolean update = customerDAO.update(conn, cust);
+            if (update == true) {
+                System.out.println("Customer Updated");
+            } else {
+                System.out.println("ERROR: Customer Details NOT Updated or Do Not Exist");
+            }
         } catch (Exception e) {
-            System.out.println("Update Failed");
+            e.printStackTrace();
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
     }
 
     public void GetCustomerById() {
-        Connection conn = null;
         System.out.printf("Enter Customer ID: \n");
         int customerId = scanner.nextInt();
+        Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
             Customer cust = customerDAO.getCustomerById(conn, customerId);

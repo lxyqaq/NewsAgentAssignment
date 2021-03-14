@@ -15,21 +15,24 @@ import java.util.List;
 public class PublicationDAOImpl extends BaseDAO<Publication> implements PublicationDAO {
 
     @Override
-    public void insert(Connection conn, Publication publi) {
+    public boolean insert(Connection conn, Publication publi) {
         String sql = "insert into publication(name,amount)values(?,?)";
-        update(conn, sql, publi.getName(), publi.getAmount());
+        boolean insert = update(conn, sql, publi.getName(), publi.getAmount());
+        return insert;
     }
 
     @Override
-    public void deleteById(Connection conn, int id) {
+    public boolean deleteById(Connection conn, int id) {
         String sql = "delete from publication where id = ?";
-        update(conn, sql, id);
+        boolean delete = update(conn, sql, id);
+        return delete;
     }
 
     @Override
-    public void update(Connection conn, Publication publi) {
+    public boolean update(Connection conn, Publication publi) {
         String sql = "update publication set name = ?,amount = ? where id = ?";
-        update(conn, sql, publi.getName(), publi.getAmount(), publi.getId());
+        boolean update = update(conn, sql, publi.getName(), publi.getAmount(), publi.getId());
+        return update;
     }
 
     @Override
