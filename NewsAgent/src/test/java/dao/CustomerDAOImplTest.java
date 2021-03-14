@@ -25,27 +25,12 @@ public class CustomerDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            coon.setAutoCommit(false);
             Customer customer001 = new Customer("Jack", "jack@gmail.com", "Athlone", "0830120548");
-            customerDAO.insert(coon, customer001);
-            List<Customer> customerList = customerDAO.getAll(coon);
-            assertEquals(customer001.getName(), customerList.get(customerList.size() - 1).getName());
-            assertEquals(customer001.getEmail(), customerList.get(customerList.size() - 1).getEmail());
-            assertEquals(customer001.getAddress(), customerList.get(customerList.size() - 1).getAddress());
-            assertEquals(customer001.getPhoneNumber(), customerList.get(customerList.size() - 1).getPhoneNumber());
+            boolean insert = customerDAO.insert(coon, customer001);
         } catch (DaoExceptionHandler | SQLException e) {
             fail("Exception not expected");
         } finally {
-            try {
-                coon.rollback();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-            try {
-                coon.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
+            JDBCUtils.closeResource(coon,null);
         }
 
     }

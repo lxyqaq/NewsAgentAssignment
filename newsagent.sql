@@ -27,3 +27,21 @@ CREATE TABLE `newsagent`.`publication`
     `amount` int         not null,
     PRIMARY KEY (`id`)
 );
+CREATE TABLE `newsagent`.`order`
+(
+    `id`              int(10) AUTO_INCREMENT,
+    `customerName`    VARCHAR(45) NULL,
+    `publicationName` VARCHAR(45) NULL,
+    `date`            VARCHAR(45) null,
+    PRIMARY KEY (`id`)
+);
+CREATE TABLE `newsagent`.`bill`
+(
+    `id`              int(10) AUTO_INCREMENT,
+    `customerName`    VARCHAR(45) NULL,
+    `customerAddress` VARCHAR(45) NULL,
+    `fee`            DOUBLE null,
+    `date`            VARCHAR(45) null,
+    PRIMARY KEY (`id`)
+);
+
