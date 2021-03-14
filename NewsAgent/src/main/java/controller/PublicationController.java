@@ -32,10 +32,14 @@ public class PublicationController {
         try {
             conn = JDBCUtils.getConnection();
             Publication publi = new Publication(publicationName, publicationAmount);
-            publicationDAO.insert(conn, publi);
-            System.out.println("Insert Successfully");
+            boolean insert = publicationDAO.insert(conn, publi);
+            if (insert == true) {
+                System.out.println("Employee Details Saved");
+            } else {
+                System.out.println("ERROR: Employee Details NOT Saved");
+            }
         } catch (Exception e) {
-            System.out.println("Insert Failed");
+            e.printStackTrace();
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
@@ -47,10 +51,14 @@ public class PublicationController {
         int publicationId = scanner.nextInt();
         try {
             conn = JDBCUtils.getConnection();
-            publicationDAO.deleteById(conn, publicationId);
-            System.out.println("Delete successfully");
+            boolean delete = publicationDAO.deleteById(conn, publicationId);
+            if (delete == true) {
+                System.out.println("Publication Deleted");
+            } else {
+                System.out.println("ERROR: Publication Details NOT Deleted or Do Not Exist");
+            }
         } catch (Exception e) {
-            System.out.println("Delete failed");
+            e.printStackTrace();
         } finally {
             JDBCUtils.closeResource(conn, null);
         }
@@ -67,10 +75,14 @@ public class PublicationController {
         try {
             conn = JDBCUtils.getConnection();
             Publication publi = new Publication(publicationId, publicationName, publicationAmount);
-            publicationDAO.update(conn, publi);
-            System.out.println("Update successfully");
+            boolean update = publicationDAO.update(conn, publi);
+            if (update == true) {
+                System.out.println("Publication Updated");
+            } else {
+                System.out.println("ERROR: Publication Details NOT Updated or Do Not Exist");
+            }
         } catch (Exception e) {
-            System.out.println("Update failed");
+            e.printStackTrace();
         } finally {
             JDBCUtils.closeResource(conn, null);
         }

@@ -111,8 +111,7 @@ public class Customer {
      * @date 2021/2/9 18:47
      */
     public static void validateName(String customerName) throws DaoExceptionHandler {
-        //StringUtiles.isBlank(str) = str.isBlank()
-        if (StringUtils.isBlank(customerName))
+        if (customerName.isBlank() || customerName.isEmpty())
             throw new DaoExceptionHandler("Customer Name NOT specified");
         else if (customerName.length() < 2)
             throw new DaoExceptionHandler("Customer Name does not meet minimum length requirements");
@@ -129,7 +128,7 @@ public class Customer {
      * @date 2021/2/9 18:48
      */
     public static void validateAddress(String customerAddr) throws DaoExceptionHandler {
-        if (StringUtils.isBlank(customerAddr))
+        if (customerAddr.isBlank() || customerAddr.isEmpty())
             throw new DaoExceptionHandler("Customer Address NOT specified");
         else if (customerAddr.length() < 5)
             throw new DaoExceptionHandler("Customer Address does not meet minimum length requirements");
@@ -146,7 +145,7 @@ public class Customer {
      * @date 2021/2/9 18:48
      */
     public static void validatePhoneNumber(String customerPhone) throws DaoExceptionHandler {
-        if (StringUtils.isBlank(customerPhone))
+        if (customerPhone.isBlank() || customerPhone.isEmpty())
             throw new DaoExceptionHandler("Customer PhoneNumber NOT specified");
         else if (customerPhone.length() < 7)
             throw new DaoExceptionHandler("Customer PhoneNumber does not meet minimum length requirements");

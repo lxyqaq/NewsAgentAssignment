@@ -16,13 +16,13 @@ import java.util.List;
 public interface EmployeeDAO {
 
 
-    void insert(Connection conn, Employee cust);
+    boolean insert(Connection conn, Employee cust);
 
 
-    void deleteById(Connection conn, int id);
+    boolean deleteById(Connection conn, int id);
 
 
-    void update(Connection conn, Employee cust);
+    boolean update(Connection conn, Employee cust);
 
 
     Employee getEmployeeById(Connection conn, int id);

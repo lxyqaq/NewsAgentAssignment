@@ -24,7 +24,7 @@ public interface CustomerDAO {
      * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 02:01
      */
-    void insert(Connection conn, Customer cust);
+    boolean insert(Connection conn, Customer cust);
 
     /**
      * @param conn
@@ -35,7 +35,7 @@ public interface CustomerDAO {
      * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 02:02
      */
-    void deleteById(Connection conn, int id);
+    boolean deleteById(Connection conn, int id);
 
     /**
      * @param conn
@@ -46,7 +46,7 @@ public interface CustomerDAO {
      * @author Xiangyu Liu @email A00279565@student.ait.ie
      * @date 2021/2/8 02:03
      */
-    void update(Connection conn, Customer cust);
+    boolean update(Connection conn, Customer cust);
 
     /**
      * @param conn
