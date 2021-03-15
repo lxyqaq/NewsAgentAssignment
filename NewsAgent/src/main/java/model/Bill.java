@@ -113,7 +113,7 @@ public class Bill {
     public static void validateCustomerAddress(String customerAddress) throws DaoExceptionHandler {
         if (customerAddress.isEmpty() || customerAddress.isBlank()) {
             throw new DaoExceptionHandler("Customer Address NOT specified");
-        } else if (customerAddress.length() < 10) {
+        } else if (customerAddress.length() < 2) {
             throw new DaoExceptionHandler("Customer Address does not meet minimum length requirements");
         } else if (customerAddress.length() > 25) {
             throw new DaoExceptionHandler("Customer Address exceeds maximum length requirements");

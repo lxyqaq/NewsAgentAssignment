@@ -31,7 +31,7 @@ public class BillDAOImpl extends BaseDAO<Bill> implements BillDAO {
 
     @Override
     public boolean update(Connection conn, Bill bill) {
-        String sql = "update customer set customerName = ?,customerAddress = ?,fee = ?,date = ? where id = ?";
+        String sql = "update bill set customerName = ?,customerAddress = ?,fee = ?,date = ? where id = ?";
         boolean update = update(conn, sql, bill.getCustomerName(), bill.getCustomerAddress(), bill.getFee(), bill.getDate(), bill.getId());
         return update;
     }
