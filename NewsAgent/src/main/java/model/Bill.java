@@ -5,7 +5,7 @@ import controller.DaoExceptionHandler;
 /**
  * @ClassName Bill
  * @Description TODO
- * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Author Minjun Dai @Email A00279566@student.ait.ie
  * @Date 2021/3/14 17:41
  * @Version 1.0
  */
@@ -132,7 +132,7 @@ public class Bill {
 
     public static void validateDate(String deliverDate) throws DaoExceptionHandler {
         if (deliverDate.isEmpty() || deliverDate.isBlank())
-            throw new DaoExceptionHandler("Bill Date NOT specified");
+            throw new DaoExceptionHandler("Bill NOT specified NOT specified");
         else if (deliverDate.length() < 9)
             throw new DaoExceptionHandler("Bill Date does not meet minimum length requirements");
         else if (deliverDate.length() > 11)

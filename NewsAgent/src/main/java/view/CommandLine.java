@@ -4,6 +4,7 @@ import controller.CustomerController;
 import controller.EmployeeController;
 import controller.OrderController;
 import controller.PublicationController;
+import controller.BillController;
 import dao.CustomerDAOImpl;
 import model.Customer;
 import utils.JDBCUtils;
@@ -26,6 +27,7 @@ public class CommandLine {
     private EmployeeController employeeController = new EmployeeController();
     private PublicationController publicationController = new PublicationController();
     private OrderController orderController = new OrderController();
+    private BillController billController = new BillController();
 
     public int showInterface() {
         System.out.println("\nWelcome to NewsAgent System, сhoose one of the modules:" +
@@ -142,6 +144,35 @@ public class CommandLine {
         }
     }
 
+    public void chooseBillAction() {
+        System.out.println("\n1 - Show all Bills  | 2 - Add Bill" +
+                "\n3 - Update Bill     | 4 - Delete Bill" +
+                "\n5 - Search Bill     | 6 - Exit");
+        int action = scanner.nextInt();
+        switch (action) {
+            case 1:
+                billController.GetAll();
+                chooseBillAction();
+            case 2:
+                billController.Insert();
+                chooseBillAction();
+            case 3:
+                billController.Update();
+                chooseBillAction();
+            case 4:
+                billController.DeleteById();
+                chooseBillAction();
+            case 5:
+                billController.GetBillById();
+                chooseBillAction();
+            case 6:
+                start();
+                break;
+        }
+    }
+
+
+
     public void start() {
         while (true) {
             switch (showInterface()) {
@@ -158,6 +189,9 @@ public class CommandLine {
                     chooseOrderAction();
                     break;
                 case 5:
+                    chooseBillAction();
+                    break;
+                case 6:
                     break;
             }
         }

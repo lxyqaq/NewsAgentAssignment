@@ -1,7 +1,7 @@
 package model;
 
 import controller.DaoExceptionHandler;
-import org.apache.commons.lang3.StringUtils;
+
 
 /**
  * @ClassName Customer
