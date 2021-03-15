@@ -155,12 +155,12 @@ public class BillTest extends TestCase {
 
     //Test #: 10
     //Test Objective: To catch an incorrect lower boundary value Date
-    //Inputs: Date = "083"
+    //Inputs: Date = "15/3/2021"
     //Expected Output: Exception Message: "Date does not meet minimum length requirements"
     public void testBill010() {
 
         try {
-            Bill.validateDate("083");
+            Bill.validateDate("15/3/201");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Date does not meet minimum length requirements", e.getMessage());
@@ -175,7 +175,7 @@ public class BillTest extends TestCase {
     public void testBill011() {
 
         try {
-            Bill.validateDate("888888888888888888888888888888888888888");
+            Bill.validateDate("15/3/20211111");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Date exceeds maximum length requirements", e.getMessage());
