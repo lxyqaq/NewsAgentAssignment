@@ -95,8 +95,8 @@ public class Order {
             throw new DaoExceptionHandler("Customer Name NOT specified");
         else if (custName.length() < 2)
             throw new DaoExceptionHandler("Customer Name does not meet minimum length requirements");
-        else if (custName.length() > 30)
-            throw new DaoExceptionHandler("Customer Name does exceeds maximum length requirements");
+        else if (custName.length() > 15)
+            throw new DaoExceptionHandler("Customer Name exceeds maximum length requirements");
 
     }
 
@@ -106,8 +106,8 @@ public class Order {
             throw new DaoExceptionHandler("Publication Name NOT specified");
         else if (publicationName.length() < 2)
             throw new DaoExceptionHandler("Publication Name does not meet minimum length requirements");
-        else if (publicationName.length() > 30)
-            throw new DaoExceptionHandler("Publication Name does exceeds maximum length requirements");
+        else if (publicationName.length() > 15)
+            throw new DaoExceptionHandler("Publication Name exceeds maximum length requirements");
 
     }
 
@@ -115,10 +115,10 @@ public class Order {
 
         if (deliverDate.isEmpty() || deliverDate.isBlank())
             throw new DaoExceptionHandler("Deliver Date NOT specified");
-        else if (deliverDate.length() < 9)
+        else if (deliverDate.length() < 8)
             throw new DaoExceptionHandler("Deliver Date does not meet minimum length requirements");
-        else if (deliverDate.length() > 11)
-            throw new DaoExceptionHandler("Deliver Date does exceeds maximum length requirements");
+        else if (deliverDate.length() > 10)
+            throw new DaoExceptionHandler("Deliver Date exceeds maximum length requirements");
 
     }
 

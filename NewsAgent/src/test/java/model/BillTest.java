@@ -15,18 +15,18 @@ public class BillTest extends TestCase {
     //Test #: 1
     //Test Objective: To create a Bill Account
     //Inputs: customerName = "Jack", customerAddress = "No.8 willow park", fee = 100,
-    //date = 2021.3.14
+    //date = "14/3/2021"
     //Expected Output: Bill Object created with id = 0, "Jack", customerAddress = "No.8 willow park", fee = 100,
-    //date = 2021.3.14
+    //date = "14/3/2021"
     public void testBill001() {
 
         try {
-            Bill bill001 = new Bill("Jack", "No.8 willow park", "100", "2021.3.14");
+            Bill bill001 = new Bill("Jack", "No.8 willow park", 100, "");
             assertEquals(0, bill001.getId());
             assertEquals("Jack", bill001.getCustomerName());
             assertEquals("No.8 willow park", bill001.getCustomerAddress());
-            assertEquals("100", bill001.getFee());
-            assertEquals("2021.3.14", bill001.getDate());
+            assertEquals(100, bill001.getFee());
+            assertEquals("14/3/2021", bill001.getDate());
         } catch (DaoExceptionHandler e) {
             fail("Exception not expected");
         }
@@ -202,7 +202,7 @@ public class BillTest extends TestCase {
     //Test Objective: To catch an empty value Date
     //Inputs: Date = ""
     //Expected Output: Exception Message: "Date NOT specified"
-    public void testBill013() {
+    public void testBill014() {
 
         try {
             Bill.validateDate("");
@@ -218,7 +218,7 @@ public class BillTest extends TestCase {
     //Test Objective: To test fee which is less than 0
     //Inputs: fee = -1
     //Expected Output: Exception Message: "Fee does not meet minimum length requirements"
-    public void testBill013() {
+    public void testBill015() {
 
         try {
             Bill.validateFee(-1);
@@ -233,7 +233,7 @@ public class BillTest extends TestCase {
     //Test Objective: To test fee which is greater than 100000
     //Inputs: fee = 500000
     //Expected Output: Exception Message: "Fee does not meet maximum length requirements"
-    public void testBill013() {
+    public void testBill016() {
 
         try {
             Bill.validateFee(500000);

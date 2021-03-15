@@ -132,7 +132,7 @@ public class Bill {
 
     public static void validateDate(String deliverDate) throws DaoExceptionHandler {
         if (deliverDate.isEmpty() || deliverDate.isBlank())
-            throw new DaoExceptionHandler("Bill NOT specified NOT specified");
+            throw new DaoExceptionHandler("Bill NOT specified");
         else if (deliverDate.length() < 9)
             throw new DaoExceptionHandler("Bill Date does not meet minimum length requirements");
         else if (deliverDate.length() > 11)
