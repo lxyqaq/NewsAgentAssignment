@@ -218,7 +218,7 @@ public class BillTest extends TestCase {
     //Test Objective: To test fee which is less than 0
     //Inputs: fee = -1
     //Expected Output: Exception Message: "Fee does not meet minimum length requirements"
-    public void testBill013() {
+    public void testBill014() {
 
         try {
             Bill.validateFee(-1);
@@ -233,7 +233,7 @@ public class BillTest extends TestCase {
     //Test Objective: To test fee which is greater than 100000
     //Inputs: fee = 500000
     //Expected Output: Exception Message: "Fee does not meet maximum length requirements"
-    public void testBill013() {
+    public void testBill015() {
 
         try {
             Bill.validateFee(500000);
