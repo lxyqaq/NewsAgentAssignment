@@ -227,7 +227,7 @@ public class CustomerTest extends TestCase {
 
     }
 
-    //Test #: 11
+    //Test #: 15
     //Test Objective: To catch an incorrect Upper boundary value Customer Email
     //Inputs: Email = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     //Expected Output: Exception Message: "Customer Email exceeds maximum length requirements"
@@ -242,7 +242,7 @@ public class CustomerTest extends TestCase {
 
     }
 
-    //Test #: 12
+    //Test #: 16
     //Test Objective: To catch an empty value Customer Email
     //Inputs: Email = " "
     //Expected Output: Exception Message: "Customer Email NOT specified"
@@ -257,7 +257,7 @@ public class CustomerTest extends TestCase {
 
     }
 
-    //Test #: 13
+    //Test #: 17
     //Test Objective: To catch an empty value Customer Email
     //Inputs: Email = ""
     //Expected Output: Exception Message: "Customer Email NOT specified"
