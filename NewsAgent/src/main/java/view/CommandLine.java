@@ -151,20 +151,20 @@ public class CommandLine {
         int action = scanner.nextInt();
         switch (action) {
             case 1:
-                customerController.GetAll();
-                chooseCustomerAction();
+                billController.GetAll();
+                chooseBillAction();
             case 2:
-                customerController.Insert();
-                chooseCustomerAction();
+                billController.Insert();
+                chooseBillAction();
             case 3:
-                customerController.Update();
-                chooseCustomerAction();
+                billController.Update();
+                chooseBillAction();
             case 4:
-                customerController.DeleteById();
-                chooseCustomerAction();
+                billController.DeleteById();
+                chooseBillAction();
             case 5:
-                customerController.GetCustomerById();
-                chooseCustomerAction();
+                billController.GetBillById();
+                chooseBillAction();
             case 6:
                 start();
                 break;

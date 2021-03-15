@@ -213,5 +213,36 @@ public class BillTest extends TestCase {
 
     }
 
+
+    //Test #: 14
+    //Test Objective: To test fee which is less than 0
+    //Inputs: fee = -1
+    //Expected Output: Exception Message: "Fee does not meet minimum length requirements"
+    public void testBill013() {
+
+        try {
+            Bill.validateFee(-1);
+            fail("Exception expected");
+        } catch (DaoExceptionHandler e) {
+            assertEquals("Fee does not meet minimum length requirements", e.getMessage());
+        }
+
+    }
+
+    //Test #: 15
+    //Test Objective: To test fee which is greater than 100000
+    //Inputs: fee = 500000
+    //Expected Output: Exception Message: "Fee does not meet maximum length requirements"
+    public void testBill013() {
+
+        try {
+            Bill.validateFee(500000);
+            fail("Exception expected");
+        } catch (DaoExceptionHandler e) {
+            assertEquals("Fee does not meet maximum length requirements", e.getMessage());
+        }
+
+    }
+
 }
 

@@ -28,7 +28,7 @@ public class BillController {
         System.out.printf("Enter customerAddress: \n");
         String customerAddress = scanner.next();
         System.out.printf("Enter fee: \n");
-        Double fee = scanner.nextDouble();
+        double fee = scanner.nextDouble();
         System.out.printf("Enter date: \n");
         String date = scanner.next();
         Connection conn = null;
@@ -81,8 +81,8 @@ public class BillController {
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Bill bilt = new Bill(billId, customerName, customerAddress, fee, date);
-            boolean update = billDAO.update(conn, bilt);
+            Bill bill = new Bill(billId, customerName, customerAddress, fee, date);
+            boolean update = billDAO.update(conn, bill);
             if (update == true) {
                 System.out.println("Bill Updated");
             } else {
