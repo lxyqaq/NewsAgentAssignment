@@ -76,9 +76,9 @@ public class BillDAOImplTest extends TestCase {
         try {
             coon = JDBCUtils.getConnection();
             coon.setAutoCommit(false);
-            Bill bill003 = new Bill("Jack", "No.8 willow park", "100", "2021.3.14");
+            Bill bill003 = new Bill("Jack", "No.8 willow park", 100, "2021.3.14");
             billDAO.insert(coon, bill003);
-            Bill billUpdate003 = new Bill("Nathan", "No.8 willow park", "100", "2021.3.14");
+            Bill billUpdate003 = new Bill("Nathan", "No.8 willow park", 100, "2021.3.14");
             billDAO.update(coon, billUpdate003);
             List<Bill> billList = billDAO.getAll(coon);
             assertEquals(bill003.getCustomerName(), billList.get(billList.size() - 1).getCustomerName());
@@ -109,7 +109,7 @@ public class BillDAOImplTest extends TestCase {
         try {
             coon = JDBCUtils.getConnection();
             coon.setAutoCommit(false);
-            Bill bill004 = new Bill("Jack", "No.8 willow park", "100", "2021.3.14");
+            Bill bill004 = new Bill("Jack", "No.8 willow park", 100, "2021.3.14");
             billDAO.insert(coon, bill004);
             List<Bill> billList = billDAO.getAll(coon);
             Bill bill = billDAO.getBillById(coon, billList.get(billList.size() - 1).getId());
