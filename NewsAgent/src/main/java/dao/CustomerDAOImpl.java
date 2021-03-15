@@ -52,10 +52,4 @@ public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
         return list;
     }
 
-    @Override
-    public Long getCount(Connection conn) {
-        String sql = "select count(*) from customer";
-        return getValue(conn, sql);
-    }
-
 }

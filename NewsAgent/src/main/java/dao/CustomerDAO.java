@@ -69,14 +69,4 @@ public interface CustomerDAO {
      */
     List<Customer> getAll(Connection conn);
 
-    /**
-     * @param conn
-     * @return java.lang.Long
-     * @throws
-     * @description Returns the number of data entries in the data table
-     * @author Xiangyu Liu @email A00279565@student.ait.ie
-     * @date 2021/2/8 02:04
-     */
-    Long getCount(Connection conn);
-
 }

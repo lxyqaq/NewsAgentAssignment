@@ -30,8 +30,5 @@ public interface EmployeeDAO {
 
     List<Employee> getAll(Connection conn);
 
-
-    Long getCount(Connection conn);
-
 }
 

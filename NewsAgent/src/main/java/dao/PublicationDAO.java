@@ -68,14 +68,4 @@ public interface PublicationDAO {
      */
     List<Publication> getAll(Connection conn);
 
-    /**
-     * @param conn
-     * @return java.lang.Long
-     * @throws
-     * @description get count
-     * @author Xiangyu Liu @email A00279565@student.ait.ie
-     * @date 2021/2/13 21:25
-     */
-    Long getCount(Connection conn);
-
 }

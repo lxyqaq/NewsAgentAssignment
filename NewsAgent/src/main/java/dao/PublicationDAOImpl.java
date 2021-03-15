@@ -49,10 +49,4 @@ public class PublicationDAOImpl extends BaseDAO<Publication> implements Publicat
         return list;
     }
 
-    @Override
-    public Long getCount(Connection conn) {
-        String sql = "select count(*) from publication";
-        return getValue(conn, sql);
-    }
-
 }

@@ -51,11 +51,5 @@ public class EmployeeDAOImpl extends BaseDAO<Employee> implements EmployeeDAO {
         return list;
     }
 
-    @Override
-    public Long getCount(Connection conn) {
-        String sql = "select count(*) from employee";
-        return getValue(conn, sql);
-    }
-
 }
 
