@@ -15,18 +15,18 @@ public class BillTest extends TestCase {
     //Test #: 1
     //Test Objective: To create a Bill Account
     //Inputs: customerName = "Jack", customerAddress = "No.8 willow park", fee = 100,
-    //date = 2021.3.14
+    //date = 11/11/2020
     //Expected Output: Bill Object created with id = 0, "Jack", customerAddress = "No.8 willow park", fee = 100,
-    //date = 2021.3.14
+    //date = 11/11/2020
     public void testBill001() {
 
         try {
-            Bill bill001 = new Bill("Jack", "No.8 willow park", 100, "2021.3.14");
+            Bill bill001 = new Bill("Jack", "No.8 willow park", 100, "11/11/2020");
             assertEquals(0, bill001.getId());
             assertEquals("Jack", bill001.getCustomerName());
             assertEquals("No.8 willow park", bill001.getCustomerAddress());
-            assertEquals("100", bill001.getFee());
-            assertEquals("2021.3.14", bill001.getDate());
+            assertEquals(100.0, bill001.getFee());
+            assertEquals("11/11/2020", bill001.getDate());
         } catch (DaoExceptionHandler e) {
             fail("Exception not expected");
         }
@@ -133,7 +133,7 @@ public class BillTest extends TestCase {
             Bill.validateCustomerAddress(" ");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
-            assertEquals("cusCustomer Address NOT specified", e.getMessage());
+            assertEquals("Customer Address NOT specified", e.getMessage());
         }
 
     }
@@ -193,7 +193,7 @@ public class BillTest extends TestCase {
             Bill.validateDate(" ");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
-            assertEquals("Bill NOT specified NOT specified", e.getMessage());
+            assertEquals("Bill NOT specified", e.getMessage());
         }
 
     }
@@ -208,7 +208,7 @@ public class BillTest extends TestCase {
             Bill.validateDate("");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
-            assertEquals("Bill NOT specified NOT specified", e.getMessage());
+            assertEquals("Bill NOT specified", e.getMessage());
         }
 
     }

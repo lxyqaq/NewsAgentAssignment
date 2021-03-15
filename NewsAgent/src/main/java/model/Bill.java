@@ -115,7 +115,7 @@ public class Bill {
             throw new DaoExceptionHandler("Customer Address NOT specified");
         } else if (customerAddress.length() < 10) {
             throw new DaoExceptionHandler("Customer Address does not meet minimum length requirements");
-        } else if (customerAddress.length() > 200) {
+        } else if (customerAddress.length() > 25) {
             throw new DaoExceptionHandler("Customer Address exceeds maximum length requirements");
         }
     }
@@ -125,7 +125,7 @@ public class Bill {
             throw new DaoExceptionHandler("Customer Name NOT specified");
         } else if (customerName.length() < 3) {
             throw new DaoExceptionHandler("Customer Name does not meet minimum length requirements");
-        } else if (customerName.length() > 50) {
+        } else if (customerName.length() > 25) {
             throw new DaoExceptionHandler("Customer Name exceeds maximum length requirements");
         }
     }
