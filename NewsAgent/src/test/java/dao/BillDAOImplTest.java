@@ -3,7 +3,6 @@ package dao;
 import controller.DaoExceptionHandler;
 import junit.framework.TestCase;
 import model.Bill;
-import org.junit.Test;
 import utils.JDBCUtils;
 
 import java.sql.Connection;
@@ -25,7 +24,7 @@ public class BillDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill001 = new Bill("Jack", "No.8 willow park", "100", "2021.3.14");
+            Bill bill001 = new Bill("Jack", "No.8 willow park", 100, "2021.3.14");
             boolean insert = billDAO.insert(coon, bill001);
         } catch (DaoExceptionHandler | SQLException e) {
             fail("Exception not expected");
@@ -47,7 +46,7 @@ public class BillDAOImplTest extends TestCase {
         try {
             coon = JDBCUtils.getConnection();
             coon.setAutoCommit(false);
-            Bill bill002 = new Bill("Jack", "No.8 willow park", "100", "2021.3.14");
+            Bill bill002 = new Bill("Jack", "No.8 willow park", 100, "2021.3.14");
             billDAO.insert(coon, bill002);
             List<Bill> billList = billDAO.getAll(coon);
             billDAO.deleteById(coon, billList.get(billList.size() - 1).getId());
