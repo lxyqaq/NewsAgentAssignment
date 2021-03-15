@@ -100,7 +100,7 @@ public class BillTest extends TestCase {
     public void testBill006() {
 
         try {
-            Bill.validateCustomerAddress("At");
+            Bill.validateCustomerAddress("A");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Address does not meet minimum length requirements", e.getMessage());
@@ -231,18 +231,34 @@ public class BillTest extends TestCase {
 
     //Test #: 15
     //Test Objective: To test fee which is greater than 100000
-    //Inputs: fee = 500000
+    //Inputs: fee = 10000000
     //Expected Output: Exception Message: "Fee does not meet maximum length requirements"
     public void testBill015() {
 
         try {
-            Bill.validateFee(500000);
+            Bill.validateFee(10000000);
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Fee does not meet maximum length requirements", e.getMessage());
         }
 
     }
+
+    //Test #: 16
+    //Test Objective: To test fee which is greater than 100000
+    //Inputs: fee = 100000
+    //Expected Output: Exception Message: "Fee does not meet maximum length requirements"
+    public void testBill016() {
+
+        try {
+            Bill bill = new Bill("Test", "Test", 100000, "11/11/1111");
+            assertEquals(100000.0, bill.getFee());
+        } catch (DaoExceptionHandler e) {
+            fail("Exception expected");
+        }
+
+    }
+
 
 }
 

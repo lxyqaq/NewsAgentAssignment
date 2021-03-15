@@ -22,7 +22,6 @@ public class CustomerTest extends TestCase {
 
         try {
             Customer customer001 = new Customer("Jack", "jack@gmail.com", "Athlone", "0830120548");
-            assertEquals(0, customer001.getId());
             assertEquals("Jack", customer001.getName());
             assertEquals("jack@gmail.com", customer001.getEmail());
             assertEquals("Athlone", customer001.getAddress());
@@ -209,6 +208,66 @@ public class CustomerTest extends TestCase {
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer PhoneNumber NOT specified", e.getMessage());
+        }
+
+    }
+
+    //Test #: 14
+    //Test Objective: To catch an incorrect lower boundary value Customer Email
+    //Inputs: Email = "aa"
+    //Expected Output: Exception Message: "Customer Email does not meet minimum length requirements"
+    public void testCustomer014() {
+
+        try {
+            Customer.validateEmail("a");
+            fail("Exception expected");
+        } catch (DaoExceptionHandler e) {
+            assertEquals("Customer Email does not meet minimum length requirements", e.getMessage());
+        }
+
+    }
+
+    //Test #: 11
+    //Test Objective: To catch an incorrect Upper boundary value Customer Email
+    //Inputs: Email = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    //Expected Output: Exception Message: "Customer Email exceeds maximum length requirements"
+    public void testCustomer015() {
+
+        try {
+            Customer.validateEmail("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            fail("Exception expected");
+        } catch (DaoExceptionHandler e) {
+            assertEquals("Customer Email exceeds maximum length requirements", e.getMessage());
+        }
+
+    }
+
+    //Test #: 12
+    //Test Objective: To catch an empty value Customer Email
+    //Inputs: Email = " "
+    //Expected Output: Exception Message: "Customer Email NOT specified"
+    public void testCustomer016() {
+
+        try {
+            Customer.validateEmail(" ");
+            fail("Exception expected");
+        } catch (DaoExceptionHandler e) {
+            assertEquals("Customer Email NOT specified", e.getMessage());
+        }
+
+    }
+
+    //Test #: 13
+    //Test Objective: To catch an empty value Customer Email
+    //Inputs: Email = ""
+    //Expected Output: Exception Message: "Customer Email NOT specified"
+    public void testCustomer017() {
+
+        try {
+            Customer.validateEmail("");
+            fail("Exception expected");
+        } catch (DaoExceptionHandler e) {
+            assertEquals("Customer Email NOT specified", e.getMessage());
         }
 
     }

@@ -153,4 +153,13 @@ public class Customer {
             throw new DaoExceptionHandler("Customer PhoneNumber exceeds maximum length requirements");
     }
 
+    public static void validateEmail(String email) throws DaoExceptionHandler {
+        if (email.isBlank() || email.isEmpty())
+            throw new DaoExceptionHandler("Customer Email NOT specified");
+        else if (email.length() < 5)
+            throw new DaoExceptionHandler("Customer Email does not meet minimum length requirements");
+        else if (email.length() > 30)
+            throw new DaoExceptionHandler("Customer Email exceeds maximum length requirements");
+    }
+
 }
