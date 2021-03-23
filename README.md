@@ -40,3 +40,11 @@ Stock in user stories:
 - SQL Exception (3hrs) :Xiangyu Liu
 - USER STORY:Order (Add, delete, modify and search methods, JUnit Test) (15hrs) :Xiangyu Liu
 - USER STORY:Bill (Add, delete, modify and search methods, JUnit Test) (15hrs) :Minjun Dai
+
+## Sprint3 Plan:
+- Redesigning the database(5hrs) :Xiangyu Liu
+- Redesigning the database(5hrs) :Minjun Dai
+- Rewrite each class of the database table field mapping(5hrs) :Xiangyu Liu
+- Rewrite each class of the database table field mapping(5hrs) :Minjun Dai
+- Check the program and fix the bugs(5hrs) :Xiangyu Liu
+- Check the program and fix the bugs(5hrs) :Minjun Dai
