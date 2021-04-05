@@ -1,3 +1,4 @@
+/*
 package dao;
 
 import controller.DaoExceptionHandler;
@@ -11,13 +12,15 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+*/
 /**
  * @ClassName OrderDAOImplTest
  * @Description TODO
  * @Author lxyqaq @Email A00279565@student.ait.ie
  * @Date 2021/3/14 20:37
  * @Version 1.0
- */
+ *//*
+
 public class OrderDAOImplTest extends TestCase {
 
     OrderDAO orderDAO = new OrderDAOImpl();
@@ -114,3 +117,4 @@ public class OrderDAOImplTest extends TestCase {
     }
 
 }
+*/

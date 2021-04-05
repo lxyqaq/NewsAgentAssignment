@@ -16,28 +16,28 @@ public class PublicationDAOImpl extends BaseDAO<Publication> implements Publicat
 
     @Override
     public boolean insert(Connection conn, Publication publi) {
-        String sql = "insert into publication(name,amount)values(?,?)";
-        boolean insert = update(conn, sql, publi.getName(), publi.getAmount());
+        String sql = "insert into publication(pname,price,amount)values(?,?,?)";
+        boolean insert = update(conn, sql, publi.getPname(), publi.getPrice(), publi.getAmount());
         return insert;
     }
 
     @Override
     public boolean deleteById(Connection conn, int id) {
-        String sql = "delete from publication where id = ?";
+        String sql = "delete from publication where pid = ?";
         boolean delete = update(conn, sql, id);
         return delete;
     }
 
     @Override
     public boolean update(Connection conn, Publication publi) {
-        String sql = "update publication set name = ?,amount = ? where id = ?";
-        boolean update = update(conn, sql, publi.getName(), publi.getAmount(), publi.getId());
+        String sql = "update publication set pname = ?,price = ?,amount = ? where id = ?";
+        boolean update = update(conn, sql, publi.getPname(), publi.getPrice(), publi.getAmount(), publi.getPid());
         return update;
     }
 
     @Override
     public Publication getPublicationById(Connection conn, int id) {
-        String sql = "select id,name,amount from publication where id = ?";
+        String sql = "select * from publication where pid = ?";
         Publication publication = getInstance(conn, sql, id);
         return publication;
     }

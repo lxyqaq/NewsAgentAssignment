@@ -1,15 +1,18 @@
+/*
 package model;
 
 import controller.DaoExceptionHandler;
 import junit.framework.TestCase;
 
+*/
 /**
  * @ClassName BillTest
  * @Description Bill Test Coverage
  * @Author Minjun Dai @Email A00279566@student.ait.ie
  * @Date 2021/2/9 18:55
  * @Version 1.0
- */
+ *//*
+
 public class BillTest extends TestCase {
 
     //Test #: 1
@@ -262,3 +265,4 @@ public class BillTest extends TestCase {
 
 }
 
+*/

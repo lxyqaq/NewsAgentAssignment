@@ -12,51 +12,62 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class Publication {
 
-    private int id;
-    private String name;
+    private int pid;
+    private String pname;
+    private double price;
     private int amount;
 
     public Publication() {
 
     }
 
-    public Publication(String name, int amount) throws DaoExceptionHandler {
+    public Publication(String pname, double price, int amount) throws DaoExceptionHandler {
         try {
-            validateName(name);
+            validateName(pname);
             validateAmount(amount);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             throw daoExceptionHandler;
         }
-        setName(name);
-        setAmount(amount);
+        this.pname = pname;
+        this.price = price;
+        this.amount = amount;
     }
 
-    public Publication(int id, String name, int amount) throws DaoExceptionHandler {
+    public Publication(int pid, String pname, double price, int amount) throws DaoExceptionHandler {
         try {
-            validateName(name);
+            validateName(pname);
             validateAmount(amount);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             throw daoExceptionHandler;
         }
-        setId(id);
-        setName(name);
-        setAmount(amount);
+        this.pid = pid;
+        this.pname = pname;
+        this.price = price;
+        this.amount = amount;
     }
 
-    public int getId() {
-        return id;
+    public int getPid() {
+        return pid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPid(int pid) {
+        this.pid = pid;
     }
 
-    public String getName() {
-        return name;
+    public String getPname() {
+        return pname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPname(String pname) {
+        this.pname = pname;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public int getAmount() {
@@ -70,12 +81,12 @@ public class Publication {
     @Override
     public String toString() {
         return "Publication{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", amount='" + amount + '\'' +
+                "pid=" + pid +
+                ", pname='" + pname + '\'' +
+                ", price=" + price +
+                ", amount=" + amount +
                 '}';
     }
-
 
     public static void validateName(String publicationrName) throws DaoExceptionHandler {
         if (publicationrName.isBlank() || publicationrName.isEmpty())

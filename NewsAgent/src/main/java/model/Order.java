@@ -11,81 +11,141 @@ import controller.DaoExceptionHandler;
  */
 public class Order {
 
-    private int id;
-    private String customerName;
-    private String publicationName;
-    private String date;
+    private int oid;
+    private String cname;
+    private String cemail;
+    private String caddress;
+    private String cphone;
+    private String pname;
+    private double price;
+    private int quantity;
+    private String odate;
 
     public Order() {
 
     }
 
-    public Order(String customerName, String publicationName, String date) throws DaoExceptionHandler {
+    public Order(String cname, String cemail, String caddress, String cphone, String pname, double price, int quantity, String odate) throws DaoExceptionHandler {
         try {
-            validateName(customerName);
-            validatePublication(publicationName);
-            validateDate(date);
+            validateName(cname);
+            validatePublication(pname);
+            validateDate(odate);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             throw daoExceptionHandler;
         }
-        setCustomerName(customerName);
-        setPublicationName(publicationName);
-        setDate(date);
+        this.cname = cname;
+        this.cemail = cemail;
+        this.caddress = caddress;
+        this.cphone = cphone;
+        this.pname = pname;
+        this.price = price;
+        this.quantity = quantity;
+        this.odate = odate;
     }
 
-    public Order(int id, String customerName, String publicationName, String date) throws DaoExceptionHandler {
+    public Order(int oid, String cname, String cemail, String caddress, String cphone, String pname, double price, int quantity, String odate) throws DaoExceptionHandler {
         try {
-            validateName(customerName);
-            validatePublication(publicationName);
-            validateDate(date);
+            validateName(cname);
+            validatePublication(pname);
+            validateDate(odate);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             throw daoExceptionHandler;
         }
-        setId(id);
-        setCustomerName(customerName);
-        setPublicationName(publicationName);
-        setDate(date);
+        this.oid = oid;
+        this.cname = cname;
+        this.cemail = cemail;
+        this.caddress = caddress;
+        this.cphone = cphone;
+        this.pname = pname;
+        this.price = price;
+        this.quantity = quantity;
+        this.odate = odate;
     }
 
-    public int getId() {
-        return id;
+    public int getOid() {
+        return oid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setOid(int oid) {
+        this.oid = oid;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public String getCname() {
+        return cname;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
-    public String getPublicationName() {
-        return publicationName;
+    public String getCemail() {
+        return cemail;
     }
 
-    public void setPublicationName(String publicationName) {
-        this.publicationName = publicationName;
+    public void setCemail(String cemail) {
+        this.cemail = cemail;
     }
 
-    public String getDate() {
-        return date;
+    public String getCaddress() {
+        return caddress;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setCaddress(String caddress) {
+        this.caddress = caddress;
+    }
+
+    public String getCphone() {
+        return cphone;
+    }
+
+    public void setCphone(String cphone) {
+        this.cphone = cphone;
+    }
+
+    public String getPname() {
+        return pname;
+    }
+
+    public void setPname(String pname) {
+        this.pname = pname;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getOdate() {
+        return odate;
+    }
+
+    public void setOdate(String odate) {
+        this.odate = odate;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
         return "Order{" +
-                "id=" + id +
-                ", customerName='" + customerName + '\'' +
-                ", publicationName='" + publicationName + '\'' +
-                ", date='" + date + '\'' +
+                "oid=" + oid +
+                ", cname='" + cname + '\'' +
+                ", cemail='" + cemail + '\'' +
+                ", caddress='" + caddress + '\'' +
+                ", cphone='" + cphone + '\'' +
+                ", pname='" + pname + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", odate='" + odate + '\'' +
                 '}';
     }
 

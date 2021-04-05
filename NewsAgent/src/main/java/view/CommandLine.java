@@ -1,10 +1,6 @@
 package view;
 
-import controller.CustomerController;
-import controller.EmployeeController;
-import controller.OrderController;
-import controller.PublicationController;
-import controller.BillController;
+import controller.*;
 import dao.CustomerDAOImpl;
 import model.Customer;
 import utils.JDBCUtils;
@@ -28,11 +24,12 @@ public class CommandLine {
     private PublicationController publicationController = new PublicationController();
     private OrderController orderController = new OrderController();
     private BillController billController = new BillController();
+    private InvoiceController invoiceController = new InvoiceController();
 
     public int showInterface() {
         System.out.println("\nWelcome to NewsAgent System, сhoose one of the modules:" +
                 "\n1 - Customer      | 2 - Employee     | 3 - Publication" +
-                "\n4 - Order         | 5 - Bill");
+                "\n4 - Order         | 5 - Bill         | 6 - Invoice");
         return scanner.nextInt();
     }
 
@@ -145,33 +142,52 @@ public class CommandLine {
     }
 
     public void chooseBillAction() {
-        System.out.println("\n1 - Show all Bills  | 2 - Add Bill" +
-                "\n3 - Update Bill     | 4 - Delete Bill" +
-                "\n5 - Search Bill     | 6 - Exit");
+        System.out.println("\n1 - Show all Bills  | 2 - Update Bill" +
+                "\n3 - Delete Bill     | 4 - Search Bill" +
+                "\n5 - Exit");
         int action = scanner.nextInt();
         switch (action) {
             case 1:
                 billController.GetAll();
                 chooseBillAction();
             case 2:
-                billController.Insert();
-                chooseBillAction();
-            case 3:
                 billController.Update();
                 chooseBillAction();
-            case 4:
+            case 3:
                 billController.DeleteById();
                 chooseBillAction();
-            case 5:
+            case 4:
                 billController.GetBillById();
                 chooseBillAction();
-            case 6:
+            case 5:
                 start();
                 break;
         }
     }
 
-
+    public void chooseInvoiceAction() {
+        System.out.println("\n1 - Show all Invoices  | 2 - Update Invoice" +
+                "\n3 - Delete Invoice     | 4 - Search Invoice" +
+                "\n5 - Exit");
+        int action = scanner.nextInt();
+        switch (action) {
+            case 1:
+                invoiceController.GetAll();
+                chooseBillAction();
+            case 2:
+                invoiceController.Update();
+                chooseBillAction();
+            case 3:
+                invoiceController.DeleteById();
+                chooseBillAction();
+            case 4:
+                invoiceController.GetInvoiceById();
+                chooseBillAction();
+            case 5:
+                start();
+                break;
+        }
+    }
 
     public void start() {
         while (true) {
@@ -192,6 +208,7 @@ public class CommandLine {
                     chooseBillAction();
                     break;
                 case 6:
+                    chooseInvoiceAction();
                     break;
             }
         }

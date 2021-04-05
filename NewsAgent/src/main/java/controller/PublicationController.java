@@ -27,11 +27,13 @@ public class PublicationController {
         Connection conn = null;
         System.out.printf("Enter Publication Name: \n");
         String publicationName = scanner.next();
+        System.out.printf("Enter Publication Price: \n");
+        double publicationPrice = scanner.nextDouble();
         System.out.printf("Enter Publication amount: \n");
         int publicationAmount = scanner.nextInt();
         try {
             conn = JDBCUtils.getConnection();
-            Publication publi = new Publication(publicationName, publicationAmount);
+            Publication publi = new Publication(publicationName, publicationPrice, publicationAmount);
             boolean insert = publicationDAO.insert(conn, publi);
             if (insert == true) {
                 System.out.println("Employee Details Saved");
@@ -70,11 +72,13 @@ public class PublicationController {
         int publicationId = scanner.nextInt();
         System.out.printf("Enter Publication Name: \n");
         String publicationName = scanner.next();
+        System.out.printf("Enter Publication Price: \n");
+        double publicationPrice = scanner.nextDouble();
         System.out.printf("Enter Publication Amount: \n");
         int publicationAmount = scanner.nextInt();
         try {
             conn = JDBCUtils.getConnection();
-            Publication publi = new Publication(publicationId, publicationName, publicationAmount);
+            Publication publi = new Publication(publicationId, publicationName, publicationPrice, publicationAmount);
             boolean update = publicationDAO.update(conn, publi);
             if (update == true) {
                 System.out.println("Publication Updated");

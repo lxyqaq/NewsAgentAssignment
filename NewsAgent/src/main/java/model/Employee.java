@@ -15,93 +15,93 @@ import java.sql.Date;
 
 public class Employee {
 
-    private int id;
-    private String name;
-    private String email;
-    private String address;
-    private String phoneNumber;
+    private int eid;
+    private String ename;
+    private String eemail;
+    private String eaddress;
+    private String ephoneNumber;
 
     public Employee() {
 
     }
 
-    public Employee(String name, String email, String address, String phoneNumber) throws DaoExceptionHandler {
+    public Employee(String ename, String eemail, String eaddress, String ephoneNumber) throws DaoExceptionHandler {
         try {
-            validateName(name);
-            validateAddress(address);
-            validatePhoneNumber(phoneNumber);
+            validateName(ename);
+            validateAddress(eaddress);
+            validatePhoneNumber(ephoneNumber);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             daoExceptionHandler.printStackTrace();
         }
-        setName(name);
-        setEmail(email);
-        setAddresss(address);
-        setPhoneNumber(phoneNumber);
+        setName(ename);
+        setEmail(eemail);
+        setAddresss(eaddress);
+        setPhoneNumber(ephoneNumber);
     }
 
-    public Employee(int id, String name, String email, String address, String phoneNumber) throws DaoExceptionHandler {
+    public Employee(int eid, String ename, String eemail, String eaddress, String ephoneNumber) throws DaoExceptionHandler {
         try {
-            validateName(name);
-            validateAddress(address);
-            validatePhoneNumber(phoneNumber);
+            validateName(ename);
+            validateAddress(eaddress);
+            validatePhoneNumber(ephoneNumber);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             daoExceptionHandler.printStackTrace();
         }
-        setId(id);
-        setName(name);
-        setEmail(email);
-        setAddresss(address);
-        setPhoneNumber(phoneNumber);
+        setId(eid);
+        setName(ename);
+        setEmail(eemail);
+        setAddresss(eaddress);
+        setPhoneNumber(ephoneNumber);
     }
 
     public int getId() {
-        return id;
+        return eid;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.eid = id;
     }
 
     public String getName() {
-        return name;
+        return ename;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.ename = name;
     }
 
     public String getEmail() {
-        return email;
+        return eemail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.eemail = email;
     }
 
     public String getAddress() {
-        return address;
+        return eaddress;
     }
 
     public void setAddresss(String address) {
-        this.address = address;
+        this.eaddress = address;
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return ephoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        this.ephoneNumber = phoneNumber;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                "id=" + eid +
+                ", name='" + ename + '\'' +
+                ", email='" + eemail + '\'' +
+                ", address='" + eaddress + '\'' +
+                ", phoneNumber='" + ephoneNumber + '\'' +
                 '}';
     }
 

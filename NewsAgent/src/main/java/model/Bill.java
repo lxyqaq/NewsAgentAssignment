@@ -11,67 +11,89 @@ import controller.DaoExceptionHandler;
  */
 public class Bill {
 
-    private int id;
-    private String customerName;
-    private String customerAddress;
+    private int bid;
+    private int oid;
+    private String cname;
+    private String caddress;
+    private String cphone;
     private double fee;
-    private String date;
+    private String odate;
 
     public Bill() {
 
     }
 
-    public Bill(String customerName, String customerAddress, double fee, String date) throws DaoExceptionHandler {
+    public Bill(int oid, String cname, String caddress, String cphone, double fee, String odate) throws DaoExceptionHandler {
         try {
-            validateCustomerName(customerName);
-            validateCustomerAddress(customerAddress);
-            validateDate(date);
+            validateCustomerName(cname);
+            validateCustomerAddress(caddress);
+            validateDate(odate);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             throw daoExceptionHandler;
         }
-        setCustomerName(customerName);
-        setCustomerAddress(customerAddress);
-        setFee(fee);
-        setDate(date);
+        this.oid = oid;
+        this.cname = cname;
+        this.caddress = caddress;
+        this.cphone = cphone;
+        this.fee = fee;
+        this.odate = odate;
     }
 
-    public Bill(int id, String customerName, String customerAddress, double fee, String date) throws DaoExceptionHandler {
+    public Bill(int bid, int oid, String cname, String caddress, String cphone, double fee, String odate) throws DaoExceptionHandler {
         try {
-            validateCustomerName(customerName);
-            validateCustomerAddress(customerAddress);
-            validateDate(date);
+            validateCustomerName(cname);
+            validateCustomerAddress(caddress);
+            validateDate(odate);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             throw daoExceptionHandler;
         }
-        setId(id);
-        setCustomerName(customerName);
-        setCustomerAddress(customerAddress);
-        setFee(fee);
-        setDate(date);
+        this.bid = bid;
+        this.oid = oid;
+        this.cname = cname;
+        this.caddress = caddress;
+        this.cphone = cphone;
+        this.fee = fee;
+        this.odate = odate;
     }
 
-    public int getId() {
-        return id;
+    public int getBid() {
+        return bid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBid(int bid) {
+        this.bid = bid;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public int getOid() {
+        return oid;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setOid(int oid) {
+        this.oid = oid;
     }
 
-    public String getCustomerAddress() {
-        return customerAddress;
+    public String getCname() {
+        return cname;
     }
 
-    public void setCustomerAddress(String customerAddress) {
-        this.customerAddress = customerAddress;
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public String getCaddress() {
+        return caddress;
+    }
+
+    public void setCaddress(String caddress) {
+        this.caddress = caddress;
+    }
+
+    public String getCphone() {
+        return cphone;
+    }
+
+    public void setCphone(String cphone) {
+        this.cphone = cphone;
     }
 
     public double getFee() {
@@ -82,22 +104,24 @@ public class Bill {
         this.fee = fee;
     }
 
-    public String getDate() {
-        return date;
+    public String getOdate() {
+        return odate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setOdate(String odate) {
+        this.odate = odate;
     }
 
     @Override
     public String toString() {
         return "Bill{" +
-                "id=" + id +
-                ", customerName='" + customerName + '\'' +
-                ", customerAddress='" + customerAddress + '\'' +
+                "bid=" + bid +
+                ", oid=" + oid +
+                ", cname='" + cname + '\'' +
+                ", caddress='" + caddress + '\'' +
+                ", cphone='" + cphone + '\'' +
                 ", fee=" + fee +
-                ", date='" + date + '\'' +
+                ", odate='" + odate + '\'' +
                 '}';
     }
 

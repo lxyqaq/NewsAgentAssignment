@@ -19,7 +19,7 @@ public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
 
     @Override
     public boolean insert(Connection conn, Customer cust) {
-        String sql = "insert into customer(name,email,address,phoneNumber)values(?,?,?,?)";
+        String sql = "insert into customer(cname,cemail,caddress,cphone)values(?,?,?,?)";
         boolean insert = update(conn, sql, cust.getName(), cust.getEmail(), cust.getAddress(), cust.getPhoneNumber());
         return insert;
     }
@@ -33,14 +33,14 @@ public class CustomerDAOImpl extends BaseDAO<Customer> implements CustomerDAO {
 
     @Override
     public boolean update(Connection conn, Customer cust) {
-        String sql = "update customer set name = ?,email = ?,address = ?,phoneNumber = ? where id = ?";
+        String sql = "update customer set cname = ?,cemail = ?,caddress = ?,cphone = ? where cid = ?";
         boolean update = update(conn, sql, cust.getName(), cust.getEmail(), cust.getAddress(), cust.getPhoneNumber(), cust.getId());
         return update;
     }
 
     @Override
     public Customer getCustomerById(Connection conn, int id) {
-        String sql = "select id,name,email,address,phoneNumber from customer where id = ?";
+        String sql = "select cid,cname,cemail,caddress,cphone from customer where cid = ?";
         Customer customer = getInstance(conn, sql, id);
         return customer;
     }

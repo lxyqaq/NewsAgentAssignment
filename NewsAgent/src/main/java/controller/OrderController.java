@@ -21,18 +21,28 @@ public class OrderController {
     private Scanner scanner = new Scanner(System.in);
     private OrderDAO orderDAO = new OrderDAOImpl();
 
-    // CustomerDAO Method:
+    // OrderDAO Method:
     public void Insert() {
         System.out.printf("Enter Customer Name: \n");
-        String customerName = scanner.next();
+        String cName = scanner.next();
+        System.out.printf("Enter Customer Email: \n");
+        String cEmail = scanner.next();
+        System.out.printf("Enter Customer Address: \n");
+        String cAddress = scanner.next();
+        System.out.printf("Enter Customer PhoneNumber: \n");
+        String cPhoneNumber = scanner.next();
         System.out.printf("Enter Publication Name: \n");
-        String publicationName = scanner.next();
+        String pName = scanner.next();
+        System.out.printf("Enter Publication Price: \n");
+        double pPrice = scanner.nextDouble();
+        System.out.printf("Enter Quantity: \n");
+        int oQuantity = scanner.nextInt();
         System.out.printf("Enter Date: \n");
         String date = scanner.next();
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Order order = new Order(customerName, publicationName, date);
+            Order order = new Order(cName, cEmail, cAddress, cPhoneNumber, pName, pPrice, oQuantity, date);
             boolean insert = orderDAO.insert(conn, order);
             if (insert == true) {
                 System.out.println("Order Details Saved");
@@ -69,15 +79,25 @@ public class OrderController {
         System.out.printf("Enter Order ID: \n");
         int orderId = scanner.nextInt();
         System.out.printf("Enter Customer Name: \n");
-        String customerName = scanner.next();
+        String cName = scanner.next();
+        System.out.printf("Enter Customer Email: \n");
+        String cEmail = scanner.next();
+        System.out.printf("Enter Customer Address: \n");
+        String cAddress = scanner.next();
+        System.out.printf("Enter Customer PhoneNumber: \n");
+        String cPhoneNumber = scanner.next();
         System.out.printf("Enter Publication Name: \n");
-        String publicationName = scanner.next();
+        String pName = scanner.next();
+        System.out.printf("Enter Publication Price: \n");
+        double pPrice = scanner.nextDouble();
+        System.out.printf("Enter Quantity: \n");
+        int oQuantity = scanner.nextInt();
         System.out.printf("Enter Date: \n");
         String date = scanner.next();
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
-            Order order = new Order(orderId, customerName, publicationName, date);
+            Order order = new Order(orderId, cName, cEmail, cAddress, cPhoneNumber, pName, pPrice, oQuantity, date);
             boolean update = orderDAO.update(conn, order);
             if (update == true) {
                 System.out.println("Order Updated");

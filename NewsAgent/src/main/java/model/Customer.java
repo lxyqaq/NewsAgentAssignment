@@ -12,93 +12,93 @@ import controller.DaoExceptionHandler;
  */
 public class Customer {
 
-    private int id;
-    private String name;
-    private String email;
-    private String address;
-    private String phoneNumber;
+    private int cid;
+    private String cname;
+    private String cemail;
+    private String caddress;
+    private String cphone;
 
     public Customer() {
 
     }
 
-    public Customer(String name, String email, String address, String phoneNumber) throws DaoExceptionHandler {
+    public Customer(String cname, String cemail, String caddress, String cphoneNumber) throws DaoExceptionHandler {
         try {
-            validateName(name);
-            validateAddress(address);
-            validatePhoneNumber(phoneNumber);
+            validateName(cname);
+            validateAddress(caddress);
+            validatePhoneNumber(cphoneNumber);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             throw daoExceptionHandler;
         }
-        setName(name);
-        setEmail(email);
-        setAddresss(address);
-        setPhoneNumber(phoneNumber);
+        setName(cname);
+        setEmail(cemail);
+        setAddresss(caddress);
+        setPhoneNumber(cphoneNumber);
     }
 
-    public Customer(int id, String name, String email, String address, String phoneNumber) throws DaoExceptionHandler {
+    public Customer(int cid, String cname, String cemail, String caddress, String cphoneNumber) throws DaoExceptionHandler {
         try {
-            validateName(name);
-            validateAddress(address);
-            validatePhoneNumber(phoneNumber);
+            validateName(cname);
+            validateAddress(caddress);
+            validatePhoneNumber(cphoneNumber);
         } catch (DaoExceptionHandler daoExceptionHandler) {
             throw daoExceptionHandler;
         }
-        setId(id);
-        setName(name);
-        setEmail(email);
-        setAddresss(address);
-        setPhoneNumber(phoneNumber);
+        setId(cid);
+        setName(cname);
+        setEmail(cemail);
+        setAddresss(caddress);
+        setPhoneNumber(cphoneNumber);
     }
 
     public int getId() {
-        return id;
+        return cid;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.cid = id;
     }
 
     public String getName() {
-        return name;
+        return cname;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.cname = name;
     }
 
     public String getEmail() {
-        return email;
+        return cemail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.cemail = email;
     }
 
     public String getAddress() {
-        return address;
+        return caddress;
     }
 
     public void setAddresss(String address) {
-        this.address = address;
+        this.caddress = address;
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return cphone;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        this.cphone = phoneNumber;
     }
 
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                "id=" + cid +
+                ", name='" + cname + '\'' +
+                ", email='" + cemail + '\'' +
+                ", address='" + caddress + '\'' +
+                ", phoneNumber='" + cphone + '\'' +
                 '}';
     }
 

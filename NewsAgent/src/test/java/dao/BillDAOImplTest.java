@@ -1,3 +1,4 @@
+/*
 package dao;
 
 import controller.DaoExceptionHandler;
@@ -11,13 +12,15 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+*/
 /**
  * @ClassName BillDAOImplTest
  * @Description TODO
  * @Author Minjun Dai @Email A00279566@student.ait.ie
  * @Date 2021/3/14 20:50
  * @Version 1.0
- */
+ *//*
+
 public class BillDAOImplTest extends TestCase {
 
     BillDAO billDAO = new BillDAOImpl();
@@ -115,3 +118,4 @@ public class BillDAOImplTest extends TestCase {
 
 }
 
+*/

@@ -1,15 +1,18 @@
+/*
 package model;
 
 import controller.DaoExceptionHandler;
 import junit.framework.TestCase;
 
+*/
 /**
  * @ClassName OrderTest
  * @Description TODO
  * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/3/15 13:12
  * @Version 1.0
- */
+ *//*
+
 public class OrderTest extends TestCase {
 
     //Test #: 1
@@ -212,3 +215,4 @@ public class OrderTest extends TestCase {
 
 
 }
+*/
