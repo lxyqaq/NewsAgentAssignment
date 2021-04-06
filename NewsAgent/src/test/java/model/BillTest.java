@@ -1,35 +1,32 @@
-/*
 package model;
 
 import controller.DaoExceptionHandler;
 import junit.framework.TestCase;
 
-*/
 /**
  * @ClassName BillTest
  * @Description Bill Test Coverage
  * @Author Minjun Dai @Email A00279566@student.ait.ie
  * @Date 2021/2/9 18:55
  * @Version 1.0
- *//*
-
+ */
 public class BillTest extends TestCase {
 
     //Test #: 1
     //Test Objective: To create a Bill Account
-    //Inputs: customerName = "Jack", customerAddress = "No.8 willow park", fee = 100,
-    //date = 11/11/2020
-    //Expected Output: Bill Object created with id = 0, "Jack", customerAddress = "No.8 willow park", fee = 100,
-    //date = 11/11/2020
+    //Inputs: 1,"Jack", "No.8 willow park", "830431515",100, "11/11/2021"
+    //date = 11/11/2021
+    //Expected Output: Bill Object created with 1,"Jack", "No.8 willow park", "830431515",100, "11/11/2021"
+    //date = 11/11/2021
     public void testBill001() {
 
         try {
-            Bill bill001 = new Bill("Jack", "No.8 willow park", 100, "11/11/2020");
-            assertEquals(0, bill001.getId());
-            assertEquals("Jack", bill001.getCustomerName());
-            assertEquals("No.8 willow park", bill001.getCustomerAddress());
+            Bill bill001 = new Bill(1,"Jack", "No.8 willow park", "830431515",100, "11/11/2021");
+            assertEquals(0, bill001.getBid());
+            assertEquals("Jack", bill001.getCname());
+            assertEquals("No.8 willow park", bill001.getCaddress());
             assertEquals(100.0, bill001.getFee());
-            assertEquals("11/11/2020", bill001.getDate());
+            assertEquals("11/11/2020", bill001.getOdate());
         } catch (DaoExceptionHandler e) {
             fail("Exception not expected");
         }
@@ -103,7 +100,7 @@ public class BillTest extends TestCase {
     public void testBill006() {
 
         try {
-            Bill.validateCustomerAddress("A");
+            Bill.validateCustomerAddress("At");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Address does not meet minimum length requirements", e.getMessage());
@@ -234,12 +231,12 @@ public class BillTest extends TestCase {
 
     //Test #: 15
     //Test Objective: To test fee which is greater than 100000
-    //Inputs: fee = 10000000
+    //Inputs: fee = 500000
     //Expected Output: Exception Message: "Fee does not meet maximum length requirements"
     public void testBill015() {
 
         try {
-            Bill.validateFee(10000000);
+            Bill.validateFee(500000);
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Fee does not meet maximum length requirements", e.getMessage());
@@ -247,22 +244,5 @@ public class BillTest extends TestCase {
 
     }
 
-    //Test #: 16
-    //Test Objective: To test fee which is greater than 100000
-    //Inputs: fee = 100000
-    //Expected Output: Exception Message: "Fee does not meet maximum length requirements"
-    public void testBill016() {
-
-        try {
-            Bill bill = new Bill("Test", "Test", 100000, "11/11/1111");
-            assertEquals(100000.0, bill.getFee());
-        } catch (DaoExceptionHandler e) {
-            fail("Exception expected");
-        }
-
-    }
-
-
 }
 
-*/

@@ -1,17 +1,17 @@
-/*
+
 package model;
 
 import controller.DaoExceptionHandler;
 import junit.framework.TestCase;
 
-*/
+
 /**
  * @ClassName PublicationTest
  * @Description Publication Test Coverage
  * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/2/13 21:57
  * @Version 1.0
- *//*
+ */
 
 public class PublicationTest extends TestCase {
 
@@ -22,9 +22,9 @@ public class PublicationTest extends TestCase {
     public void testPublication001() {
 
         try {
-            Publication publication001 = new Publication("Test", 11);
-            assertEquals(0, publication001.getId());
-            assertEquals("Test", publication001.getName());
+            Publication publication001 = new Publication("newspaper", 150,1000);
+            assertEquals(0, publication001.getPid());
+            assertEquals("Test", publication001.getPname());
             assertEquals(11, publication001.getAmount());
         } catch (DaoExceptionHandler e) {
             fail("Exception not expected");
@@ -115,7 +115,7 @@ public class PublicationTest extends TestCase {
     public void testPublication008() {
 
         try {
-            Publication publication007 = new Publication("Test007", 0);
+            Publication publication007 = new Publication("newspaper", 150,0);
             assertEquals(0, publication007.getAmount());
         } catch (DaoExceptionHandler e) {
             fail("Exception expected");
@@ -130,7 +130,7 @@ public class PublicationTest extends TestCase {
     public void testPublication009() {
 
         try {
-            Publication publication007 = new Publication("Test007", 100000);
+            Publication publication007 = new Publication("newspaper", 150,10000);
             assertEquals(100000, publication007.getAmount());
         } catch (DaoExceptionHandler e) {
             fail("Exception expected");
@@ -154,4 +154,4 @@ public class PublicationTest extends TestCase {
     }
 
 }
-*/
+
