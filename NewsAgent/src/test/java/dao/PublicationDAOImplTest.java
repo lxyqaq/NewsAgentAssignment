@@ -1,4 +1,3 @@
-
 package dao;
 
 import controller.DaoExceptionHandler;
@@ -25,7 +24,7 @@ public class PublicationDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Publication publication001 = new Publication("newspaper", 150,1000);
+            Publication publication001 = new Publication("newspaper", 150, 1000);
             boolean insert = publicationDAO.insert(coon, publication001);
             assertEquals(true, insert);
         } catch (DaoExceptionHandler | SQLException e) {
@@ -43,7 +42,7 @@ public class PublicationDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Publication publication002 = new Publication("newspaper", 150,1000);
+            Publication publication002 = new Publication("newspaper", 150, 1000);
             boolean delete = publicationDAO.deleteById(coon, publication002.getPid());
             assertEquals(true, delete);
         } catch (DaoExceptionHandler | SQLException e) {
@@ -61,7 +60,7 @@ public class PublicationDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Publication publication003 = new Publication("newspaper", 100,1000);
+            Publication publication003 = new Publication("newspaper", 100, 1000);
             boolean update = publicationDAO.update(coon, publication003);
             assertEquals(true, update);
         } catch (DaoExceptionHandler | SQLException e) {
@@ -79,7 +78,7 @@ public class PublicationDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Publication publication004 = new Publication("newspaper", 100,1000);
+            Publication publication004 = new Publication("newspaper", 100, 1000);
             publicationDAO.insert(coon, publication004);
             List<Publication> all = publicationDAO.getAll(coon);
             Publication publication = publicationDAO.getPublicationById(coon, all.get(all.size() - 1).getPid());

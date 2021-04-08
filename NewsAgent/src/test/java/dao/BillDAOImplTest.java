@@ -1,4 +1,3 @@
-
 package dao;
 
 import controller.DaoExceptionHandler;
@@ -32,7 +31,7 @@ public class BillDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill001 = new Bill(1,"Jack", "No.8 willow park", "830431515",100, "11/11/2021");
+            Bill bill001 = new Bill(1, "Jack", "No.8 willow park", "830431515", 100, "11/11/2021");
             boolean insert = billDAO.insert(coon, bill001);
             assertEquals(true, insert);
         } catch (DaoExceptionHandler | SQLException e) {
@@ -50,7 +49,7 @@ public class BillDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill002 = new Bill(1,"Jack", "No.8 willow park", "830431515",100, "11/11/2021");
+            Bill bill002 = new Bill(1, "Jack", "No.8 willow park", "830431515", 100, "11/11/2021");
             boolean delete = billDAO.deleteById(coon, bill002.getBid());
             assertEquals(true, delete);
         } catch (DaoExceptionHandler | SQLException e) {
@@ -68,7 +67,7 @@ public class BillDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill003 = new Bill(1,"Jack", "No.8 willow park", "830431515",100, "11/11/2021");
+            Bill bill003 = new Bill(1, "Jack", "No.8 willow park", "830431515", 100, "11/11/2021");
             boolean update = billDAO.update(coon, bill003);
             assertEquals(true, update);
         } catch (DaoExceptionHandler | SQLException e) {
@@ -86,7 +85,7 @@ public class BillDAOImplTest extends TestCase {
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill004 = new Bill(1,"Jack", "No.8 willow park", "830431515",100, "11/11/2021");
+            Bill bill004 = new Bill(1, "Jack", "No.8 willow park", "830431515", 100, "11/11/2021");
             billDAO.insert(coon, bill004);
             List<Bill> all = billDAO.getAll(coon);
             Bill bill = billDAO.getBillById(coon, all.get(all.size() - 1).getBid());

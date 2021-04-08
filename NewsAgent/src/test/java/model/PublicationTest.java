@@ -22,7 +22,7 @@ public class PublicationTest extends TestCase {
     public void testPublication001() {
 
         try {
-            Publication publication001 = new Publication("newspaper", 150,1000);
+            Publication publication001 = new Publication("newspaper", 150, 1000);
             assertEquals(0, publication001.getPid());
             assertEquals("Test", publication001.getPname());
             assertEquals(11, publication001.getAmount());
@@ -115,7 +115,7 @@ public class PublicationTest extends TestCase {
     public void testPublication008() {
 
         try {
-            Publication publication007 = new Publication("newspaper", 150,0);
+            Publication publication007 = new Publication("newspaper", 150, 0);
             assertEquals(0, publication007.getAmount());
         } catch (DaoExceptionHandler e) {
             fail("Exception expected");
@@ -130,7 +130,7 @@ public class PublicationTest extends TestCase {
     public void testPublication009() {
 
         try {
-            Publication publication007 = new Publication("newspaper", 150,10000);
+            Publication publication007 = new Publication("newspaper", 150, 10000);
             assertEquals(100000, publication007.getAmount());
         } catch (DaoExceptionHandler e) {
             fail("Exception expected");

@@ -21,7 +21,7 @@ public class BillTest extends TestCase {
     public void testBill001() {
 
         try {
-            Bill bill001 = new Bill(1,"Jack", "No.8 willow park", "830431515",100, "11/11/2021");
+            Bill bill001 = new Bill(1, "Jack", "No.8 willow park", "830431515", 100, "11/11/2021");
             assertEquals(0, bill001.getBid());
             assertEquals("Jack", bill001.getCname());
             assertEquals("No.8 willow park", bill001.getCaddress());
