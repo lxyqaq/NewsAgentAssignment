@@ -1,17 +1,15 @@
-/*
 package model;
 
 import controller.DaoExceptionHandler;
 import junit.framework.TestCase;
 
-*/
 /**
  * @ClassName OrderTest
- * @Description TODO
+ * @Description OrderTest
  * @Author Xiangyu Liu @Email A00279565@student.ait.ie
  * @Date 2021/3/15 13:12
  * @Version 1.0
- *//*
+ */
 
 public class OrderTest extends TestCase {
 
@@ -23,10 +21,15 @@ public class OrderTest extends TestCase {
     public void testOrder001() {
 
         try {
-            Order order001 = new Order("Jack", "newspaper", "12/1/2020");
-            assertEquals("Jack", order001.getCustomerName());
-            assertEquals("newspaper", order001.getPublicationName());
-            assertEquals("12/1/2020", order001.getDate());
+            Order order001 = new Order("Jack", "jack@gmail.com", "Athlone", "0830120845", "Newspaper", 4, 20, "11/11/2021");
+            assertEquals("Jack", order001.getCname());
+            assertEquals("jack@gmail.com", order001.getCemail());
+            assertEquals("Athlone", order001.getCaddress());
+            assertEquals("0830120845", order001.getCphone());
+            assertEquals("Newspaper", order001.getPname());
+            assertEquals(4.0, order001.getPrice());
+            assertEquals(20, order001.getQuantity());
+            assertEquals("11/11/2021", order001.getOdate());
         } catch (DaoExceptionHandler e) {
             fail("Exception not expected");
         }
@@ -213,6 +216,4 @@ public class OrderTest extends TestCase {
 
     }
 
-
 }
-*/
