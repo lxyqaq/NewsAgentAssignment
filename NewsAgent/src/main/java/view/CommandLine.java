@@ -173,16 +173,16 @@ public class CommandLine {
         switch (action) {
             case 1:
                 invoiceController.GetAll();
-                chooseBillAction();
+                chooseInvoiceAction();
             case 2:
                 invoiceController.Update();
-                chooseBillAction();
+                chooseInvoiceAction();
             case 3:
                 invoiceController.DeleteById();
-                chooseBillAction();
+                chooseInvoiceAction();
             case 4:
                 invoiceController.GetInvoiceById();
-                chooseBillAction();
+                chooseInvoiceAction();
             case 5:
                 start();
                 break;
