@@ -25,7 +25,7 @@ Order in user story:
 - Xiangyu Liu: 5 hours 5th week (10 story points including Java OrderDAO method:CRUD)
 - Xiangyu Liu: 5 hours 6th week (10 story points including Java OrderDAO method:CRUD)
 
-Stock in user stories:
+Invoice in user stories:
 
 - Minjun Dai: 5 hours 5th week (10 story points including Java StockDAO method:CRUD)
 - Minjun Dai: 5 hours 6th week (10 story points including Java StockDAO method:CRUD)
@@ -38,10 +38,12 @@ Stock in user stories:
 
 ## Sprint2 Plan:
 - SQL Exception (3hrs) :Xiangyu Liu
-- USER STORY:Order (Add, delete, modify and search methods, JUnit Test) (15hrs) :Xiangyu Liu
+- USER STORY:Publication (Add, delete, modify and search methods, JUnit Test) (5hrs) :Xiangyu Liu
+- USER STORY:Order (Add, delete, modify and search methods, JUnit Test) (7hrs) :Xiangyu Liu
 - USER STORY:Bill (Add, delete, modify and search methods, JUnit Test) (15hrs) :Minjun Dai
 
 ## Sprint3 Plan:
+- USER STORY:Invoice (Add, delete, modify and search methods, JUnit Test) (5hrs) :Xaingyu Liu
 - Redesigning the database(5hrs) :Xiangyu Liu
 - Redesigning the database(5hrs) :Minjun Dai
 - Rewrite each class of the database table field mapping(5hrs) :Xiangyu Liu
