@@ -1,5 +1,7 @@
 package model;
 
+import controller.DaoExceptionHandler;
+
 /**
  * @ClassName Invoice
  * @Description TODO
@@ -21,7 +23,14 @@ public class Invoice {
 
     }
 
-    public Invoice(String cname, String pname, int quantity, String caddress, String odate, double total) {
+    public Invoice(String cname, String pname, int quantity, String caddress, String odate, double total) throws DaoExceptionHandler {
+        try {
+            validateName(cname);
+            validatePublication(pname);
+            validateDate(odate);
+        } catch (DaoExceptionHandler daoExceptionHandler) {
+            throw daoExceptionHandler;
+        }
         this.cname = cname;
         this.pname = pname;
         this.quantity = quantity;
@@ -30,7 +39,14 @@ public class Invoice {
         this.total = total;
     }
 
-    public Invoice(int iid, String cname, String pname, int quantity, String caddress, String odate, double total) {
+    public Invoice(int iid, String cname, String pname, int quantity, String caddress, String odate, double total) throws DaoExceptionHandler {
+        try {
+            validateName(cname);
+            validatePublication(pname);
+            validateDate(odate);
+        } catch (DaoExceptionHandler daoExceptionHandler) {
+            throw daoExceptionHandler;
+        }
         this.iid = iid;
         this.cname = cname;
         this.pname = pname;
@@ -107,6 +123,39 @@ public class Invoice {
                 ", odate='" + odate + '\'' +
                 ", total=" + total +
                 '}';
+    }
+
+    public static void validateName(String custName) throws DaoExceptionHandler {
+
+        if (custName.isEmpty() || custName.isBlank())
+            throw new DaoExceptionHandler("Customer Name NOT specified");
+        else if (custName.length() < 2)
+            throw new DaoExceptionHandler("Customer Name does not meet minimum length requirements");
+        else if (custName.length() > 15)
+            throw new DaoExceptionHandler("Customer Name exceeds maximum length requirements");
+
+    }
+
+    public static void validatePublication(String publicationName) throws DaoExceptionHandler {
+
+        if (publicationName.isEmpty() || publicationName.isBlank())
+            throw new DaoExceptionHandler("Publication Name NOT specified");
+        else if (publicationName.length() < 2)
+            throw new DaoExceptionHandler("Publication Name does not meet minimum length requirements");
+        else if (publicationName.length() > 15)
+            throw new DaoExceptionHandler("Publication Name exceeds maximum length requirements");
+
+    }
+
+    public static void validateDate(String deliverDate) throws DaoExceptionHandler {
+
+        if (deliverDate.isEmpty() || deliverDate.isBlank())
+            throw new DaoExceptionHandler("Deliver Date NOT specified");
+        else if (deliverDate.length() < 8)
+            throw new DaoExceptionHandler("Deliver Date does not meet minimum length requirements");
+        else if (deliverDate.length() > 10)
+            throw new DaoExceptionHandler("Deliver Date exceeds maximum length requirements");
+
     }
 
 }

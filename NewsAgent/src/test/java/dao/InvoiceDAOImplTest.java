@@ -30,7 +30,7 @@ public class InvoiceDAOImplTest extends TestCase {
             Invoice invoice001 = new Invoice("Jack", "Newspaper", 30, "Athlone", "11/11/1111", 120);
             boolean insert = invoiceDAO.insert(coon, invoice001);
             assertEquals(true, insert);
-        } catch (SQLException e) {
+        } catch (SQLException | DaoExceptionHandler e) {
             fail("Exception not expected");
         } finally {
             JDBCUtils.closeResource(coon, null);
@@ -48,7 +48,7 @@ public class InvoiceDAOImplTest extends TestCase {
             Invoice invoice002 = new Invoice("Jack", "Newspaper", 30, "Athlone", "11/11/1111", 120);
             boolean delete = invoiceDAO.deleteById(coon, invoice002.getIid());
             assertEquals(true, delete);
-        } catch (SQLException e) {
+        } catch (SQLException | DaoExceptionHandler e) {
             fail("Exception not expected");
         } finally {
             JDBCUtils.closeResource(coon, null);
@@ -66,7 +66,7 @@ public class InvoiceDAOImplTest extends TestCase {
             Invoice invoice003 = new Invoice("Jack", "Newspaper", 30, "Athlone", "11/11/1111", 120);
             boolean update = invoiceDAO.update(coon, invoice003);
             assertEquals(true, update);
-        } catch (SQLException e) {
+        } catch (SQLException | DaoExceptionHandler e) {
             fail("Exception not expected");
         } finally {
             JDBCUtils.closeResource(coon, null);
@@ -86,7 +86,7 @@ public class InvoiceDAOImplTest extends TestCase {
             List<Invoice> all = invoiceDAO.getAll(coon);
             Invoice invoice = invoiceDAO.getInvoiceById(coon, all.get(all.size() - 1).getIid());
             assertTrue(invoice != null);
-        } catch (SQLException e) {
+        } catch (SQLException | DaoExceptionHandler e) {
             fail("Exception not expected");
         } finally {
             JDBCUtils.closeResource(coon, null);
