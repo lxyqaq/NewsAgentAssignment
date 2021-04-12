@@ -1,7 +1,6 @@
 package dao;
 
 import model.Bill;
-import model.Customer;
 
 import java.sql.Connection;
 import java.util.List;

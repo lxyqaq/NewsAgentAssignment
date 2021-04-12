@@ -2,39 +2,35 @@ package dao;
 
 import controller.DaoExceptionHandler;
 import junit.framework.TestCase;
-import model.Customer;
-import model.Bill;
-import org.junit.Test;
+import model.Invoice;
 import utils.JDBCUtils;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-
 /**
- * @ClassName BillDAOImplTest
+ * @ClassName InvoiceDAOImplTest
  * @Description TODO
- * @Author Minjun Dai @Email A00279566@student.ait.ie
- * @Date 2021/3/14 20:50
+ * @Author lxyqaq @Email A00279565@student.ait.ie
+ * @Date 2021/4/12 12:52
  * @Version 1.0
  */
+public class InvoiceDAOImplTest extends TestCase {
 
-public class BillDAOImplTest extends TestCase {
-
-    BillDAO billDAO = new BillDAOImpl();
+    InvoiceDAO invoiceDAO = new InvoiceDAOImpl();
 
     //Test #: 1
-    //Test Objective: To insert a Bill
-    public void testBillDAO001() {
+    //Test Objective: To insert a Invoice
+    public void testInvoicaDAO001() {
 
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill001 = new Bill(1, "Jack", "No.8 willow park", "830431515", 100, "11/11/2021");
-            boolean insert = billDAO.insert(coon, bill001);
+            Invoice invoice001 = new Invoice("Jack", "Newspaper", 30, "Athlone", "11/11/1111", 120);
+            boolean insert = invoiceDAO.insert(coon, invoice001);
             assertEquals(true, insert);
-        } catch (DaoExceptionHandler | SQLException e) {
+        } catch (SQLException e) {
             fail("Exception not expected");
         } finally {
             JDBCUtils.closeResource(coon, null);
@@ -43,16 +39,16 @@ public class BillDAOImplTest extends TestCase {
     }
 
     //Test #: 2
-    //Test Objective: To delete a Bill by id
-    public void testBillDAO002() {
+    //Test Objective: To delete a Invoice by id
+    public void testInvoiceDAO002() {
 
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill002 = new Bill(1, "Jack", "No.8 willow park", "830431515", 100, "11/11/2021");
-            boolean delete = billDAO.deleteById(coon, bill002.getBid());
+            Invoice invoice002 = new Invoice("Jack", "Newspaper", 30, "Athlone", "11/11/1111", 120);
+            boolean delete = invoiceDAO.deleteById(coon, invoice002.getIid());
             assertEquals(true, delete);
-        } catch (DaoExceptionHandler | SQLException e) {
+        } catch (SQLException e) {
             fail("Exception not expected");
         } finally {
             JDBCUtils.closeResource(coon, null);
@@ -62,15 +58,15 @@ public class BillDAOImplTest extends TestCase {
 
     //Test #: 3
     //Test Objective: To update a Customer Account Bill by id
-    public void testBillDAO003() {
+    public void testInvoiceDAO003() {
 
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill003 = new Bill(1, "Jack", "No.8 willow park", "830431515", 100, "11/11/2021");
-            boolean update = billDAO.update(coon, bill003);
+            Invoice invoice003 = new Invoice("Jack", "Newspaper", 30, "Athlone", "11/11/1111", 120);
+            boolean update = invoiceDAO.update(coon, invoice003);
             assertEquals(true, update);
-        } catch (DaoExceptionHandler | SQLException e) {
+        } catch (SQLException e) {
             fail("Exception not expected");
         } finally {
             JDBCUtils.closeResource(coon, null);
@@ -79,18 +75,18 @@ public class BillDAOImplTest extends TestCase {
     }
 
     //Test #: 4
-    //Test Objective: To get a Bill by id
-    public void testBillDAO004() {
+    //Test Objective: To get a Invoice by id
+    public void testInvoiceDAO004() {
 
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            Bill bill004 = new Bill(1, "Jack", "No.8 willow park", "830431515", 100, "11/11/2021");
-            billDAO.insert(coon, bill004);
-            List<Bill> all = billDAO.getAll(coon);
-            Bill bill = billDAO.getBillById(coon, all.get(all.size() - 1).getBid());
-            assertTrue(bill != null);
-        } catch (DaoExceptionHandler | SQLException e) {
+            Invoice invoice004 = new Invoice("Jack", "Newspaper", 30, "Athlone", "11/11/1111", 120);
+            invoiceDAO.insert(coon, invoice004);
+            List<Invoice> all = invoiceDAO.getAll(coon);
+            Invoice invoice = invoiceDAO.getInvoiceById(coon, all.get(all.size() - 1).getIid());
+            assertTrue(invoice != null);
+        } catch (SQLException e) {
             fail("Exception not expected");
         } finally {
             JDBCUtils.closeResource(coon, null);
@@ -99,13 +95,13 @@ public class BillDAOImplTest extends TestCase {
     }
 
     //Test #: 5
-    //Test Objective: To get Bills
-    public void testBillDAO005() {
+    //Test Objective: To get Invoices
+    public void testInvoiceDAO005() {
 
         Connection coon = null;
         try {
             coon = JDBCUtils.getConnection();
-            List<Bill> all = billDAO.getAll(coon);
+            List<Invoice> all = invoiceDAO.getAll(coon);
             assertTrue(all != null);
         } catch (SQLException e) {
             fail("Exception not expected");
