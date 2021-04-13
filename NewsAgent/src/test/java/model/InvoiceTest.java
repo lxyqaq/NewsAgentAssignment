@@ -40,7 +40,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder002() {
 
         try {
-            Order.validateName("J");
+            Invoice.validateName("J");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Name does not meet minimum length requirements", e.getMessage());
@@ -55,7 +55,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder003() {
 
         try {
-            Order.validateName("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ");
+            Invoice.validateName("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Name exceeds maximum length requirements", e.getMessage());
@@ -70,7 +70,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder004() {
 
         try {
-            Order.validateName(" ");
+            Invoice.validateName(" ");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Name NOT specified", e.getMessage());
@@ -85,7 +85,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder005() {
 
         try {
-            Order.validateName("");
+            Invoice.validateName("");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Customer Name NOT specified", e.getMessage());
@@ -100,7 +100,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder006() {
 
         try {
-            Order.validatePublication("J");
+            Invoice.validatePublication("J");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Publication Name does not meet minimum length requirements", e.getMessage());
@@ -115,7 +115,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder007() {
 
         try {
-            Order.validatePublication("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ");
+            Invoice.validatePublication("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Publication Name exceeds maximum length requirements", e.getMessage());
@@ -130,7 +130,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder008() {
 
         try {
-            Order.validatePublication(" ");
+            Invoice.validatePublication(" ");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Publication Name NOT specified", e.getMessage());
@@ -145,7 +145,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder009() {
 
         try {
-            Order.validatePublication("");
+            Invoice.validatePublication("");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Publication Name NOT specified", e.getMessage());
@@ -160,7 +160,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder010() {
 
         try {
-            Order.validateDate("11/");
+            Invoice.validateDate("11/");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Deliver Date does not meet minimum length requirements", e.getMessage());
@@ -175,7 +175,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder011() {
 
         try {
-            Order.validateDate("11/11/11111");
+            Invoice.validateDate("11/11/11111");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Deliver Date exceeds maximum length requirements", e.getMessage());
@@ -190,7 +190,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder012() {
 
         try {
-            Order.validateDate(" ");
+            Invoice.validateDate(" ");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Deliver Date NOT specified", e.getMessage());
@@ -205,7 +205,7 @@ public class InvoiceTest extends TestCase {
     public void testOrder013() {
 
         try {
-            Order.validateDate("");
+            Invoice.validateDate("");
             fail("Exception expected");
         } catch (DaoExceptionHandler e) {
             assertEquals("Deliver Date NOT specified", e.getMessage());
