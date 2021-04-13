@@ -43,7 +43,7 @@ Invoice in user stories:
 - USER STORY:Bill (Add, delete, modify and search methods, JUnit Test) (15hrs) :Minjun Dai
 
 ## Sprint3 Plan:
-- USER STORY:Invoice (Add, delete, modify and search methods, JUnit Test) (5hrs) :Xaingyu Liu
+- USER STORY:Invoice (Add, delete, modify and search methods, JUnit Test) (5hrs) :Xiangyu Liu
 - Redesigning the database(5hrs) :Xiangyu Liu
 - Redesigning the database(5hrs) :Minjun Dai
 - Rewrite each class of the database table field mapping(5hrs) :Xiangyu Liu
